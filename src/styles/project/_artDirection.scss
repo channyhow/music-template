@@ -35,17 +35,20 @@
   --text-width: var(--project-text-measure);
 }
 
+.carousel {
+  --carousel-media-ratio: 1 / 1;
+}
+
 #home-opening {
   min-height: 100svh;
-  --title-width: 7ch;
+  --title-width: 8ch;
 }
 
 #home-opening .section__mediaOverlay::after {
   content: "";
   grid-area: 1 / 1;
   z-index: 0;
-  background:
-    linear-gradient(180deg, rgb(14 14 14 / 0.04) 20%, rgb(14 14 14 / 0.74) 100%);
+  background: linear-gradient(180deg, rgb(14 14 14 / 0.04) 20%, rgb(14 14 14 / 0.74) 100%);
   pointer-events: none;
 }
 
@@ -57,12 +60,12 @@
 }
 
 #home-opening .textBlock {
-  max-width: min(92vw, 74rem);
+  max-width: min(92vw, 68rem);
 }
 
 #home-opening .textBlock__title {
-  font-size: clamp(5rem, 16vw, 16rem);
-  line-height: 0.76;
+  font-size: clamp(4.5rem, 13vw, 12rem);
+  line-height: 0.78;
   letter-spacing: -0.035em;
   text-transform: uppercase;
 }
@@ -82,8 +85,8 @@
 #concerts-featured .textBlock__title,
 #music-featured .textBlock__title,
 #press-featured .textBlock__title {
-  font-size: clamp(3.2rem, 8vw, 8rem);
-  line-height: 0.86;
+  font-size: clamp(2.5rem, 5vw, 5rem);
+  line-height: 0.9;
   text-transform: uppercase;
 }
 
@@ -129,15 +132,15 @@
 }
 
 #final-cta {
-  min-height: 92svh;
+  min-height: 86svh;
   display: grid;
   align-items: center;
-  --title-width: 8ch;
+  --title-width: 9ch;
 }
 
 #final-cta .textBlock__title {
-  font-size: clamp(4rem, 12vw, 12rem);
-  line-height: 0.8;
+  font-size: clamp(3.25rem, 8vw, 8rem);
+  line-height: 0.84;
   text-transform: uppercase;
 }
 
@@ -145,7 +148,7 @@
   #concerts-featured .section__header,
   #music-featured .section__header,
   #press-featured .section__header {
-    max-width: 72rem;
+    max-width: 64rem;
   }
 
   #booking-default .split,
