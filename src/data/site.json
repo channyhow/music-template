@@ -1,75 +1,53 @@
 {
   "site": {
-    "id": "chow-template",
-    "name": "Nom du studio",
-    "baseline": "Une phrase courte qui présente l’activité.",
-    "url": "https://example.netlify.app",
+    "id": "maloya-music-template",
+    "name": "Maloya",
+    "baseline": "Musique réunionnaise, scène vivante",
+    "url": "https://maloya-concept.netlify.app",
     "defaultLocale": "fr",
-    "supportedLocales": ["fr"],
+    "supportedLocales": ["fr", "en"],
     "seo": {
-      "defaultTitle": "Nom du studio | Activité principale",
-      "defaultDescription": "Description courte et précise de l’activité, de la proposition de valeur et de la zone géographique principale.",
+      "defaultTitle": "Maloya | Concerts, musique et univers réunionnais",
+      "defaultDescription": "Concept de site immersif pour un groupe réunionnais fictif, pensé autour des concerts, de la musique et d’un univers visuel chaleureux.",
       "defaultImage": "/media/placeholders/og-placeholder.svg",
-      "imageAlt": "Nom du studio",
+      "imageAlt": "Maloya — musique réunionnaise, scène vivante",
       "siteType": "website",
-      "organizationType": "ProfessionalService",
+      "organizationType": "MusicGroup",
       "twitterCard": "summary_large_image",
-      "themeColor": "#f6f5f3",
+      "themeColor": "#12100E",
       "areaServed": [
-        {
-          "kind": "city",
-          "name": "Ville principale"
-        },
-        {
-          "kind": "city",
-          "name": "Ville secondaire"
-        }
+        { "kind": "region", "name": "La Réunion" }
       ],
-      "knowsAbout": [
-        "Service principal",
-        "Spécialité principale",
-        "Expertise distinctive"
-      ],
-      "offerCatalogName": "Services et offres principales",
+      "knowsAbout": ["Maloya", "Séga", "Musique réunionnaise", "Concert", "Performance live"],
+      "offerCatalogName": "Musique et scène",
       "services": [
-        {
-          "name": "Service principal",
-          "description": "Description courte du service principal."
-        },
-        {
-          "name": "Deuxième service",
-          "description": "Description courte du deuxième service."
-        }
+        { "name": "Concerts", "description": "Dates live et informations pratiques." },
+        { "name": "Booking professionnel", "description": "Demandes de programmation, collaboration et événement." },
+        { "name": "Presse", "description": "Dossier, visuels et prises de contact professionnelles." }
       ]
     },
     "pwa": {
-      "name": "Nom du studio",
-      "shortName": "Studio",
-      "description": "Description courte de l’activité.",
+      "name": "Maloya",
+      "shortName": "Maloya",
+      "description": "Musique réunionnaise, scène vivante.",
       "display": "standalone",
       "startUrl": "/"
     },
     "contact": {
-      "email": "bonjour@example.com",
-      "phone": "+33 0 00 00 00 00",
+      "email": "contact@maloya-band.com",
+      "phone": "+262 000 00 00 00",
       "address": {
-        "street": "Adresse à compléter",
-        "postalCode": "00000",
-        "city": "Ville",
-        "country": "France"
+        "street": "",
+        "postalCode": "",
+        "city": "Saint-Denis",
+        "country": "La Réunion"
       }
     },
     "socials": {
-      "instagram": {
-        "label": "Instagram",
-        "href": "https://instagram.com/",
-        "enabled": true
-      },
-      "linkedin": {
-        "label": "LinkedIn",
-        "href": "",
-        "enabled": false
-      }
+      "instagram": { "label": "Instagram", "href": "https://instagram.com/maloya.band", "enabled": true },
+      "facebook": { "label": "Facebook", "href": "https://facebook.com/maloya.band", "enabled": true },
+      "youtube": { "label": "YouTube", "href": "https://youtube.com/maloya.band", "enabled": true },
+      "spotify": { "label": "Spotify", "href": "https://spotify.com/maloya.band", "enabled": true }
     },
     "credits": {
       "label": "Création du site",
@@ -84,52 +62,26 @@
         "mainLabel": "Navigation principale",
         "openMenuLabel": "Ouvrir le menu",
         "closeLabel": "Fermer",
-        "drawerLabels": {
-          "menu": "Navigation",
-          "contact": "Contact",
-          "reservation": "Réservation"
-        }
+        "drawerLabels": { "menu": "Navigation", "contact": "Contact", "reservation": "Booking" }
       },
-      "forms": {
-        "selectPlaceholder": "Sélectionner",
-        "defaultSubmitLabel": "Envoyer"
-      },
+      "forms": { "selectPlaceholder": "Sélectionner", "defaultSubmitLabel": "Envoyer" },
       "carousel": {
-        "defaultLabel": "Carrousel",
+        "defaultLabel": "À écouter et découvrir",
         "navigationLabel": "Navigation du carrousel",
         "previousLabel": "Précédent",
         "nextLabel": "Suivant",
         "positionSeparator": "sur"
       },
-      "contentSwitcher": {
-        "controlsLabel": "Choisir un contenu"
-      },
-      "schedule": {
-        "bookingLabel": "Réserver"
-      }
+      "contentSwitcher": { "controlsLabel": "Choisir un contenu" },
+      "schedule": { "bookingLabel": "Billets / infos" }
     },
-    "loader": {
-      "messages": [
-        "Chargement.",
-        "Préparation.",
-        "Bienvenue."
-      ]
-    },
-    "experience": {
-      "scrollProgress": "rail",
-      "sectionReveal": true,
-      "parallax": true,
-      "footerReveal": true
-    }
+    "loader": { "messages": ["Écouter.", "Bouger.", "Retrouver la scène."] },
+    "experience": { "scrollProgress": "rail", "sectionReveal": true, "parallax": true, "footerReveal": true }
   },
   "theme": {
     "variant": "editorial",
     "tone": "default",
-    "colors": {
-      "primary": "#161616",
-      "secondary": "#f6f5f3",
-      "accent": "#d85234"
-    },
+    "colors": { "primary": "#12100E", "secondary": "#EDE6DC", "accent": "#F01AB7" },
     "fonts": {
       "classicHeading": "DM Serif Display",
       "editorialHeading": "Playfair Display",
@@ -142,7 +94,7 @@
     "forms": "netlify",
     "cms": false,
     "calendar": false,
-    "newsletter": false,
+    "newsletter": true,
     "commerce": false,
     "maps": false,
     "reviews": false,
