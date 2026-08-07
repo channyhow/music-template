@@ -6,33 +6,31 @@
     "fields": [
       { "name": "name", "label": "Nom", "type": "text", "required": true },
       { "name": "email", "label": "E-mail", "type": "email", "required": true },
-      { "name": "phone", "label": "Téléphone", "type": "tel" },
-      { "name": "message", "label": "Message", "type": "textarea", "required": true, "placeholder": "Votre message" }
+      {
+        "name": "subject",
+        "label": "Sujet",
+        "type": "select",
+        "options": [
+          { "label": "Booking / programmation", "value": "booking" },
+          { "label": "Presse", "value": "press" },
+          { "label": "Collaboration", "value": "collaboration" },
+          { "label": "Message au groupe", "value": "message" }
+        ]
+      },
+      { "name": "message", "label": "Message", "type": "textarea", "required": true }
     ]
   },
   "reservation": {
-    "id": "reservation-form",
-    "name": "reservation",
-    "submitLabel": "Demander une réservation",
+    "id": "booking-form",
+    "name": "booking",
+    "submitLabel": "Envoyer la demande de booking",
     "fields": [
-      { "name": "name", "label": "Nom", "type": "text", "required": true },
-      { "name": "email", "label": "E-mail", "type": "email", "required": true },
-      { "name": "phone", "label": "Téléphone", "type": "tel", "required": true },
-      { "name": "date", "label": "Date", "type": "date", "required": true },
-      { "name": "time", "label": "Heure", "type": "time", "required": true },
-      { "name": "guests", "label": "Personnes", "type": "number", "required": true, "min": 1, "max": 20, "step": 1 },
-      {
-        "name": "occasion",
-        "label": "Type de réservation",
-        "type": "select",
-        "options": [
-          { "label": "Réservation", "value": "reservation" },
-          { "label": "Cours / séance", "value": "session" },
-          { "label": "Événement privé", "value": "private" },
-          { "label": "Autre", "value": "other" }
-        ]
-      },
-      { "name": "message", "label": "Message", "type": "textarea", "placeholder": "Demande particulière, allergies, contexte…" }
+      { "name": "name", "label": "Nom / structure", "type": "text", "required": true },
+      { "name": "email", "label": "E-mail professionnel", "type": "email", "required": true },
+      { "name": "phone", "label": "Téléphone", "type": "tel" },
+      { "name": "date", "label": "Date envisagée", "type": "date" },
+      { "name": "location", "label": "Lieu / ville", "type": "text" },
+      { "name": "message", "label": "Projet", "type": "textarea", "required": true, "placeholder": "Événement, jauge, contexte, budget indicatif, besoins techniques…" }
     ]
   }
 }
