@@ -12,7 +12,7 @@ import { Grid } from "@/components/layout/Grid";
 import { Split } from "@/components/layout/Split";
 import { forms } from "@/data";
 import { resolveCollection } from "@/data/resolve";
-import { resolveMedia } from "@/data/resolveMedia";
+import { resolveMediaList } from "@/data/resolveMedia";
 import siteData from "@/data/site.json";
 import { motionConfig, revealTransition } from "@/motion/config";
 import type { SectionBlock } from "@/types/content";
@@ -49,14 +49,7 @@ export function Section({ block }: SectionProps) {
   ];
   const formRef = block.content?.form;
   const form = typeof formRef === "string" ? formRegistry[formRef] : formRef;
-  const mediaRefs = block.content?.media
-    ? Array.isArray(block.content.media)
-      ? block.content.media
-      : [block.content.media]
-    : [];
-  const mediaItems = mediaRefs
-    .map((ref) => resolveMedia(ref))
-    .filter((item): item is NonNullable<typeof item> => Boolean(item));
+  const mediaItems = resolveMediaList(block.content?.media);
   const media = mediaItems[0];
   const motionEnabled = siteData.ui.experience.sectionReveal && !reduceMotion;
   const shouldReveal = motionEnabled && block.motion !== "none";
