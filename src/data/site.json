@@ -14,7 +14,7 @@
       "siteType": "website",
       "organizationType": "MusicGroup",
       "twitterCard": "summary_large_image",
-      "themeColor": "#f6f5f3",
+      "themeColor": "#0e0e0e",
       "areaServed": [
         { "kind": "region", "name": "La Réunion" }
       ],
@@ -80,7 +80,7 @@
   },
   "theme": {
     "variant": "editorial",
-    "tone": "default",
+    "tone": "inverse",
     "colors": { "primary": "#0e0e0e", "secondary": "#f6f5f3", "accent": "#fad248" },
     "fonts": {
       "classicHeading": "Anton",
