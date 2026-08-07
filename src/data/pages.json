@@ -3,13 +3,68 @@
     "id": "home",
     "slug": "/",
     "seo": {
-      "title": "Nom du studio | Activité principale",
-      "description": "Description courte et précise de l’activité, de la proposition de valeur et de la zone géographique principale.",
+      "title": "Maloya | Concerts, musique et univers réunionnais",
+      "description": "Concept immersif autour des concerts, de la musique et d’un univers visuel réunionnais.",
       "image": "/media/placeholders/og-placeholder.svg"
     },
     "blocks": [
       { "ref": "home-opening" },
-      { "ref": "home-services" },
+      { "ref": "concerts-featured" },
+      { "ref": "music-featured" },
+      { "ref": "press-featured" },
+      { "ref": "social-default" },
+      { "ref": "final-cta" },
+      { "ref": "site-footer" }
+    ]
+  },
+  {
+    "id": "concerts",
+    "slug": "/concerts",
+    "seo": {
+      "title": "Concerts | Maloya",
+      "description": "Dates fictives du concept Maloya à Salazie, Saint-Pierre et Paris."
+    },
+    "blocks": [
+      { "ref": "concerts-featured" },
+      { "ref": "booking-default" },
+      { "ref": "site-footer" }
+    ]
+  },
+  {
+    "id": "music",
+    "slug": "/musique",
+    "seo": {
+      "title": "Musique | Maloya",
+      "description": "Albums, singles et projets live fictifs du concept Maloya."
+    },
+    "blocks": [
+      { "ref": "music-featured" },
+      { "ref": "social-default" },
+      { "ref": "site-footer" }
+    ]
+  },
+  {
+    "id": "press",
+    "slug": "/presse",
+    "seo": {
+      "title": "Presse | Maloya",
+      "description": "Articles, interviews et dossier professionnel fictifs du concept Maloya."
+    },
+    "blocks": [
+      { "ref": "press-featured" },
+      { "ref": "booking-default" },
+      { "ref": "site-footer" }
+    ]
+  },
+  {
+    "id": "contact",
+    "slug": "/contact",
+    "seo": {
+      "title": "Booking & contact | Maloya",
+      "description": "Booking, presse, collaboration ou message autour du concept Maloya."
+    },
+    "blocks": [
+      { "ref": "booking-default" },
       { "ref": "contact-default" },
       { "ref": "site-footer" }
     ]
@@ -17,10 +72,10 @@
   {
     "id": "links",
     "slug": "/liens",
-    "variant": "organic",
+    "variant": "editorial",
     "seo": {
-      "title": "Liens | Nom du studio",
-      "description": "Retrouvez les liens, réservations et actualités du studio.",
+      "title": "Liens | Maloya",
+      "description": "Concerts, écoute, vidéos et booking.",
       "robots": { "index": false, "follow": true }
     },
     "blocks": [
@@ -33,8 +88,8 @@
     "id": "legal",
     "slug": "/mentions-legales",
     "seo": {
-      "title": "Mentions légales | Nom du studio",
-      "description": "Mentions légales du site."
+      "title": "Mentions légales | Maloya",
+      "description": "Informations sur le concept fictif Maloya."
     },
     "blocks": [
       { "ref": "legal-notice-default" },
