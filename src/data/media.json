@@ -3,16 +3,70 @@
     "id": "home-cover",
     "type": "image",
     "src": "/media/placeholders/landscape.svg",
-    "alt": "Image de couverture à remplacer.",
+    "alt": "Concert Maloya — remplacer par le visuel ou poster vidéo source.",
     "width": 1600,
     "height": 1067,
+    "focalPoint": { "x": 50, "y": 50 }
+  },
+  "music-live": {
+    "id": "music-live",
+    "type": "image",
+    "src": "/media/placeholders/landscape.svg",
+    "alt": "Concert live dans une lumière chaude — visuel source à intégrer.",
+    "width": 1600,
+    "height": 1067,
+    "focalPoint": { "x": 50, "y": 50 }
+  },
+  "music-guitar": {
+    "id": "music-guitar",
+    "type": "image",
+    "src": "/media/placeholders/landscape.svg",
+    "alt": "Guitare et scène — visuel source à intégrer.",
+    "width": 1600,
+    "height": 1067,
+    "focalPoint": { "x": 50, "y": 50 }
+  },
+  "music-mafate": {
+    "id": "music-mafate",
+    "type": "image",
+    "src": "/media/placeholders/portrait.svg",
+    "alt": "Cirque de Mafate — visuel source à intégrer.",
+    "width": 1200,
+    "height": 1600,
+    "focalPoint": { "x": 50, "y": 50 }
+  },
+  "music-cilaos": {
+    "id": "music-cilaos",
+    "type": "image",
+    "src": "/media/placeholders/portrait.svg",
+    "alt": "Paysage de Cilaos — visuel source à intégrer.",
+    "width": 1200,
+    "height": 1600,
+    "focalPoint": { "x": 50, "y": 50 }
+  },
+  "music-fournaise": {
+    "id": "music-fournaise",
+    "type": "image",
+    "src": "/media/placeholders/landscape.svg",
+    "alt": "Piton de la Fournaise — visuel source à intégrer.",
+    "width": 1600,
+    "height": 1067,
+    "focalPoint": { "x": 50, "y": 50 }
+  },
+  "music-poster": {
+    "id": "music-poster",
+    "type": "image",
+    "src": "/media/placeholders/portrait.svg",
+    "alt": "Affiche Maloya — visuel source à intégrer.",
+    "width": 1200,
+    "height": 1600,
     "focalPoint": { "x": 50, "y": 50 }
   },
   "profile-placeholder": {
     "id": "profile-placeholder",
     "type": "image",
     "src": "/media/placeholders/portrait.svg",
-    "alt": "Portrait à remplacer.",
+    "alt": "Portrait ou image du groupe à remplacer.",
     "width": 1200,
     "height": 1600,
     "focalPoint": { "x": 50, "y": 40 }
