@@ -9,12 +9,12 @@
     "seo": {
       "defaultTitle": "Maloya | Concerts, musique et univers réunionnais",
       "defaultDescription": "Concept de site immersif pour un groupe réunionnais fictif, pensé autour des concerts, de la musique et d’un univers visuel chaleureux.",
-      "defaultImage": "/media/placeholders/og-placeholder.svg",
+      "defaultImage": "/assets/photos/maloya/live.jpg",
       "imageAlt": "Maloya — musique réunionnaise, scène vivante",
       "siteType": "website",
       "organizationType": "MusicGroup",
       "twitterCard": "summary_large_image",
-      "themeColor": "#12100E",
+      "themeColor": "#f6f5f3",
       "areaServed": [
         { "kind": "region", "name": "La Réunion" }
       ],
@@ -81,12 +81,12 @@
   "theme": {
     "variant": "editorial",
     "tone": "default",
-    "colors": { "primary": "#12100E", "secondary": "#EDE6DC", "accent": "#F01AB7" },
+    "colors": { "primary": "#0e0e0e", "secondary": "#f6f5f3", "accent": "#fad248" },
     "fonts": {
-      "classicHeading": "DM Serif Display",
-      "editorialHeading": "Playfair Display",
-      "organicHeading": "Fraunces",
-      "body": "DM Sans"
+      "classicHeading": "Anton",
+      "editorialHeading": "Anton",
+      "organicHeading": "Bodoni Moda",
+      "body": "Cutive Mono"
     }
   },
   "integrations": {
