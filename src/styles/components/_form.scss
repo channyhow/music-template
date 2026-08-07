@@ -1,0 +1,108 @@
+@use "../foundation/tokens" as *;
+@use "../foundation/mixins" as *;
+
+.form {
+  display: grid;
+  gap: $space-3;
+  width: 100%;
+}
+
+.form__body {
+  display: grid;
+  gap: $space-2;
+}
+
+.form__field {
+  display: grid;
+  gap: $space-1;
+}
+
+.form__label {
+  font-size: $type-caption;
+}
+
+.form__control {
+  width: 100%;
+  min-width: 0;
+  min-height: $control-field-height;
+  padding: $space-2;
+  border: 1px solid color-mix(in srgb, currentColor 22%, transparent);
+  border-radius: var(--radius-control, #{$radius-default});
+  appearance: none;
+  background: color-mix(in srgb, var(--secondary) 92%, transparent);
+  color: inherit;
+  outline: 0;
+  transition:
+    border-color $transition-hover,
+    box-shadow $transition-hover,
+    background $transition-hover,
+    opacity $transition-hover;
+
+  &::placeholder {
+    color: currentColor;
+    opacity: $opacity-soft;
+  }
+
+  @include hover {
+    border-color: color-mix(in srgb, currentColor 48%, transparent);
+  }
+
+  &:focus-visible {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 24%, transparent);
+  }
+
+  &:disabled {
+    opacity: $opacity-disabled;
+    cursor: not-allowed;
+  }
+}
+
+textarea.form__control {
+  resize: vertical;
+  min-height: 8rem;
+  border-radius: var(--radius-surface, #{$radius-default});
+}
+
+.form__footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: $space-2;
+}
+
+.form__submit {
+  @include standard-control;
+
+  background: var(--primary);
+  color: var(--secondary);
+  transition:
+    transform $transition-hover,
+    opacity $transition-hover;
+
+  @include hover {
+    transform: translateY(-1px);
+  }
+
+  &:disabled {
+    opacity: $opacity-disabled;
+    cursor: not-allowed;
+  }
+}
+
+@include tablet-up {
+  .form__body {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .form__field:has(textarea) {
+    grid-column: 1 / -1;
+  }
+}
+
+@include reduced-motion {
+  .form__control,
+  .form__submit {
+    transition: none;
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "booking": {
+    "default": "#reservation",
+    "studio": "#reservation",
+    "private": "#reservation"
+  },
+  "social": {
+    "instagram": "https://instagram.com/",
+    "googleReviews": ""
+  },
+  "external": {
+    "maps": "",
+    "calendar": ""
+  }
+}

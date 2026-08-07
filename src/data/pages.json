@@ -1,0 +1,44 @@
+[
+  {
+    "id": "home",
+    "slug": "/",
+    "seo": {
+      "title": "Nom du studio | Activité principale",
+      "description": "Description courte et précise de l’activité, de la proposition de valeur et de la zone géographique principale.",
+      "image": "/media/placeholders/og-placeholder.svg"
+    },
+    "blocks": [
+      { "ref": "home-opening" },
+      { "ref": "home-services" },
+      { "ref": "contact-default" },
+      { "ref": "site-footer" }
+    ]
+  },
+  {
+    "id": "links",
+    "slug": "/liens",
+    "variant": "organic",
+    "seo": {
+      "title": "Liens | Nom du studio",
+      "description": "Retrouvez les liens, réservations et actualités du studio.",
+      "robots": { "index": false, "follow": true }
+    },
+    "blocks": [
+      { "ref": "links-profile" },
+      { "ref": "links-primary" },
+      { "ref": "site-footer" }
+    ]
+  },
+  {
+    "id": "legal",
+    "slug": "/mentions-legales",
+    "seo": {
+      "title": "Mentions légales | Nom du studio",
+      "description": "Mentions légales du site."
+    },
+    "blocks": [
+      { "ref": "legal-notice-default" },
+      { "ref": "site-footer" }
+    ]
+  }
+]

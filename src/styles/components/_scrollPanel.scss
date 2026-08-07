@@ -1,0 +1,16 @@
+@use "../foundation/tokens" as *;
+
+.scrollPanel[data-enabled="true"] {
+  scroll-snap-type: y proximity;
+
+  > * {
+    min-height: 100svh;
+    scroll-snap-align: start;
+  }
+}
+
+@media (max-width: 47.99rem) {
+  .scrollPanel[data-enabled="true"] > * {
+    min-height: auto;
+  }
+}

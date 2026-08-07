@@ -1,0 +1,80 @@
+{
+  "intro": {
+    "eyebrow": "Direction de marque",
+    "title": "Une direction visuelle à ressentir avant de la construire.",
+    "text": [
+      "Cette page rassemble les choix proposés pour l’identité numérique : ton, typographie, couleur, image, forme et mouvement.",
+      "Elle sert de support de discussion avec le client. Elle ne modifie pas le site et n’est pas destinée à devenir un configurateur."
+    ]
+  },
+  "concept": {
+    "eyebrow": "Concept",
+    "title": "Calme, précis, mémorable.",
+    "text": [
+      "Une présence éditoriale plutôt que décorative. Des choix limités, cohérents et suffisamment distinctifs pour créer une identité sans surcharger l’expérience."
+    ],
+    "keywords": ["Éditorial", "Tactile", "Confiant", "Humain", "Durable"]
+  },
+  "palette": [
+    { "name": "Primary", "value": "#161616", "role": "Texte, structure, contraste" },
+    { "name": "Secondary", "value": "#f6f5f3", "role": "Fond principal, respiration" },
+    { "name": "Accent", "value": "#d85234", "role": "Accent ponctuel, action, signal" }
+  ],
+  "typography": {
+    "heading": {
+      "label": "Display",
+      "family": "Playfair Display",
+      "sample": "Une présence qui laisse de l’espace."
+    },
+    "body": {
+      "label": "Texte courant",
+      "family": "DM Sans",
+      "sample": "Une lecture directe, souple et discrète qui laisse les images et les idées prendre le premier rôle."
+    },
+    "note": "Les polices finales doivent être licenciées et auto-hébergées. Les familles présentes dans le starter servent de direction et de placeholder."
+  },
+  "imagery": {
+    "eyebrow": "Image",
+    "title": "Photographie avant illustration décorative.",
+    "text": [
+      "Privilégier des images avec présence, matière, lumière naturelle et cadrages intentionnels.",
+      "Éviter les banques d’images trop lisses, les séries répétitives et les visuels ajoutés uniquement pour remplir un espace."
+    ],
+    "media": ["placeholder-landscape", "profile-placeholder", "home-cover"]
+  },
+  "geometry": {
+    "eyebrow": "Formes & surfaces",
+    "title": "La géométrie suit le caractère de la marque.",
+    "text": [
+      "Classic reste équilibré, Editorial plus net et graphique, Organic plus souple avec rayons généreux, masques organiques et mouvements plus fluides.",
+      "Les effets de verre, grain, cadres et formes restent des traitements optionnels et réutilisables, jamais une obligation."
+    ],
+    "samples": ["frame", "effectGlass", "organic"]
+  },
+  "motion": {
+    "eyebrow": "Mouvement",
+    "title": "Le mouvement accompagne la lecture.",
+    "text": [
+      "Reveal pour la hiérarchie, parallax pour la profondeur, drift pour des éléments décoratifs, draw pour une ligne ou une progression, Timeline pour une histoire chronologique, ScrollPanel pour une narration en panneaux et footer reveal pour une fin de page plus cinématographique.",
+      "Chaque comportement reste optionnel et possède un fallback simple pour reduced motion et petits écrans."
+    ],
+    "behaviors": ["Reveal", "Parallax", "Drift", "Draw", "Timeline", "ScrollPanel", "Footer reveal"]
+  },
+  "application": {
+    "eyebrow": "Application",
+    "title": "Ce que cette direction change concrètement sur le site.",
+    "items": [
+      { "title": "Hiérarchie", "text": ["Des titres forts, peu de niveaux concurrents et des actions clairement prioritaires."] },
+      { "title": "Composition", "text": ["Asymétrie contrôlée, respiration, images fortes et séquences éditoriales plutôt qu’une succession uniforme de blocs."] },
+      { "title": "Interaction", "text": ["Des états lisibles, des transitions douces et des effets de scroll réservés aux moments où ils apportent du sens."] },
+      { "title": "Conversion", "text": ["La preuve, l’information pratique et l’appel à l’action apparaissent au moment où ils aident réellement la décision."] }
+    ]
+  },
+  "status": {
+    "eyebrow": "Statut",
+    "title": "Moodboard de travail",
+    "text": [
+      "Cette direction sert à aligner le client et Chow Studio avant la phase de production. Les couleurs, typographies, images et références restent à valider avant intégration finale."
+    ]
+  }
+}

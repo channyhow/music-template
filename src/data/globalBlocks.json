@@ -1,0 +1,165 @@
+{
+  "home-opening": {
+    "id": "home-opening",
+    "type": "Section",
+    "layout": "media-overlay",
+    "motion": "scene",
+    "content": {
+      "header": {
+        "eyebrow": "Nom du studio",
+        "title": "Une proposition claire et mémorable.",
+        "text": ["Une introduction courte à remplacer."],
+        "links": [{ "label": "Découvrir", "href": "#services", "intent": "navigate" }]
+      },
+      "media": "home-cover"
+    }
+  },
+  "home-services": {
+    "id": "home-services",
+    "type": "Section",
+    "layout": "grid",
+    "source": { "collection": "services", "query": { "featured": true, "limit": 3 } },
+    "content": {
+      "header": { "eyebrow": "Services", "title": "Ce que nous proposons." }
+    }
+  },
+  "contact-default": {
+    "id": "contact-default",
+    "type": "Section",
+    "layout": "split",
+    "frame": true,
+    "content": {
+      "header": {
+        "eyebrow": "Contact",
+        "title": "Parlons de votre projet.",
+        "text": ["Texte de contact à adapter à l’activité."]
+      },
+      "form": "contact"
+    }
+  },
+  "reservation-default": {
+    "id": "reservation-default",
+    "type": "Section",
+    "layout": "split",
+    "frame": true,
+    "content": {
+      "header": {
+        "eyebrow": "Réserver",
+        "title": "Choisissez un moment.",
+        "text": ["Une demande simple à confirmer selon les disponibilités."]
+      },
+      "form": "reservation"
+    }
+  },
+  "reviews-default": {
+    "id": "reviews-default",
+    "type": "Section",
+    "layout": "carousel",
+    "source": { "collection": "reviews" },
+    "content": {
+      "header": { "eyebrow": "Avis", "title": "Ce qu’ils en retiennent." }
+    }
+  },
+  "social-default": {
+    "id": "social-default",
+    "type": "Section",
+    "layout": "list",
+    "source": { "collection": "links", "query": { "enabled": true } },
+    "content": {
+      "header": { "eyebrow": "Suivre", "title": "Retrouvez-nous ailleurs." }
+    }
+  },
+  "location-default": {
+    "id": "location-default",
+    "type": "Section",
+    "layout": "split",
+    "content": {
+      "header": {
+        "eyebrow": "Adresse",
+        "title": "Nous trouver.",
+        "text": ["Adresse et informations pratiques issues des données du site."]
+      }
+    }
+  },
+  "final-cta": {
+    "id": "final-cta",
+    "type": "Section",
+    "layout": "statement",
+    "tone": "inverse",
+    "content": {
+      "header": {
+        "eyebrow": "À vous",
+        "title": "On commence ?",
+        "links": [
+          { "label": "Prendre contact", "href": "#contact", "intent": "contact", "priority": "primary" },
+          { "label": "Réserver", "href": "#reservation", "intent": "book", "priority": "secondary" }
+        ]
+      }
+    }
+  },
+  "links-profile": {
+    "id": "links-profile",
+    "type": "Section",
+    "layout": "statement",
+    "content": {
+      "header": {
+        "title": "Nom du studio",
+        "text": ["Une présentation courte à remplacer."],
+        "media": "profile-placeholder"
+      }
+    }
+  },
+  "links-primary": {
+    "id": "links-primary",
+    "type": "Section",
+    "layout": "list",
+    "source": { "collection": "links", "query": { "group": "primary", "enabled": true } }
+  },
+  "legal-notice-default": {
+    "id": "legal-notice-default",
+    "type": "Section",
+    "layout": "text",
+    "content": {
+      "header": { "title": "Mentions légales" },
+      "items": [
+        {
+          "title": "Éditeur du site",
+          "text": [
+            "Nom ou raison sociale : à compléter.",
+            "Adresse : à compléter.",
+            "Numéro SIRET ou équivalent : à compléter.",
+            "Directeur ou directrice de la publication : à compléter.",
+            "Adresse e-mail : à compléter."
+          ]
+        },
+        {
+          "title": "Hébergement",
+          "text": [
+            "Le site est hébergé par Netlify, Inc.",
+            "Informations d’hébergement à vérifier et compléter au moment de la publication."
+          ]
+        },
+        {
+          "title": "Création du site",
+          "text": ["Conception, direction artistique et développement : Channy How-Choong · Chow Studio."],
+          "links": [{ "label": "@hellochowstudio", "href": "https://www.instagram.com/hellochowstudio", "intent": "navigate" }]
+        }
+      ]
+    }
+  },
+  "site-footer": {
+    "id": "site-footer",
+    "type": "Section",
+    "layout": "list",
+    "content": {
+      "header": {
+        "eyebrow": "Nom du studio",
+        "text": ["Création du site : Channy How-Choong · Chow Studio."],
+        "links": [
+          { "label": "Instagram", "href": "https://instagram.com/", "intent": "navigate" },
+          { "label": "Mentions légales", "href": "/mentions-legales", "intent": "navigate" }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+@use "../foundation/tokens" as *;
+@use "../foundation/mixins" as *;
+
+.sectionGroup {
+  position: relative;
+}
+
+.sectionGroup[data-layout="flow"] {
+  display: block;
+}
+
+@include desktop-up {
+  .sectionGroup[data-layout="scroll-panel"] > .section:first-child,
+  .sectionGroup[data-layout="sticky"] > .section:first-child {
+    position: sticky;
+    top: 0;
+  }
+
+  .sectionGroup[data-layout="overlap"] > .section + .section {
+    margin-top: calc($space-4 * -1);
+  }
+}
+
+@include reduced-motion {
+  .sectionGroup > .section {
+    position: static !important;
+    margin-top: 0 !important;
+  }
+}

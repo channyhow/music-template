@@ -1,0 +1,152 @@
+{
+  "site": {
+    "id": "chow-template",
+    "name": "Nom du studio",
+    "baseline": "Une phrase courte qui présente l’activité.",
+    "url": "https://example.netlify.app",
+    "defaultLocale": "fr",
+    "supportedLocales": ["fr"],
+    "seo": {
+      "defaultTitle": "Nom du studio | Activité principale",
+      "defaultDescription": "Description courte et précise de l’activité, de la proposition de valeur et de la zone géographique principale.",
+      "defaultImage": "/media/placeholders/og-placeholder.svg",
+      "imageAlt": "Nom du studio",
+      "siteType": "website",
+      "organizationType": "ProfessionalService",
+      "twitterCard": "summary_large_image",
+      "themeColor": "#f6f5f3",
+      "areaServed": [
+        {
+          "kind": "city",
+          "name": "Ville principale"
+        },
+        {
+          "kind": "city",
+          "name": "Ville secondaire"
+        }
+      ],
+      "knowsAbout": [
+        "Service principal",
+        "Spécialité principale",
+        "Expertise distinctive"
+      ],
+      "offerCatalogName": "Services et offres principales",
+      "services": [
+        {
+          "name": "Service principal",
+          "description": "Description courte du service principal."
+        },
+        {
+          "name": "Deuxième service",
+          "description": "Description courte du deuxième service."
+        }
+      ]
+    },
+    "pwa": {
+      "name": "Nom du studio",
+      "shortName": "Studio",
+      "description": "Description courte de l’activité.",
+      "display": "standalone",
+      "startUrl": "/"
+    },
+    "contact": {
+      "email": "bonjour@example.com",
+      "phone": "+33 0 00 00 00 00",
+      "address": {
+        "street": "Adresse à compléter",
+        "postalCode": "00000",
+        "city": "Ville",
+        "country": "France"
+      }
+    },
+    "socials": {
+      "instagram": {
+        "label": "Instagram",
+        "href": "https://instagram.com/",
+        "enabled": true
+      },
+      "linkedin": {
+        "label": "LinkedIn",
+        "href": "",
+        "enabled": false
+      }
+    },
+    "credits": {
+      "label": "Création du site",
+      "name": "Channy How-Choong",
+      "studio": "Chow Studio",
+      "href": "https://chow-studio.com/"
+    }
+  },
+  "ui": {
+    "copy": {
+      "navigation": {
+        "mainLabel": "Navigation principale",
+        "openMenuLabel": "Ouvrir le menu",
+        "closeLabel": "Fermer",
+        "drawerLabels": {
+          "menu": "Navigation",
+          "contact": "Contact",
+          "reservation": "Réservation"
+        }
+      },
+      "forms": {
+        "selectPlaceholder": "Sélectionner",
+        "defaultSubmitLabel": "Envoyer"
+      },
+      "carousel": {
+        "defaultLabel": "Carrousel",
+        "navigationLabel": "Navigation du carrousel",
+        "previousLabel": "Précédent",
+        "nextLabel": "Suivant",
+        "positionSeparator": "sur"
+      },
+      "contentSwitcher": {
+        "controlsLabel": "Choisir un contenu"
+      },
+      "schedule": {
+        "bookingLabel": "Réserver"
+      }
+    },
+    "loader": {
+      "messages": [
+        "Chargement.",
+        "Préparation.",
+        "Bienvenue."
+      ]
+    },
+    "experience": {
+      "scrollProgress": "rail",
+      "sectionReveal": true,
+      "parallax": true,
+      "footerReveal": true
+    }
+  },
+  "theme": {
+    "variant": "editorial",
+    "tone": "default",
+    "colors": {
+      "primary": "#161616",
+      "secondary": "#f6f5f3",
+      "accent": "#d85234"
+    },
+    "fonts": {
+      "classicHeading": "DM Serif Display",
+      "editorialHeading": "Playfair Display",
+      "organicHeading": "Fraunces",
+      "body": "DM Sans"
+    }
+  },
+  "integrations": {
+    "hosting": "netlify",
+    "forms": "netlify",
+    "cms": false,
+    "calendar": false,
+    "newsletter": false,
+    "commerce": false,
+    "maps": false,
+    "reviews": false,
+    "weather": false,
+    "analytics": false
+  }
+}

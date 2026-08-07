@@ -1,0 +1,21 @@
+@use "../foundation/tokens" as *;
+
+.card {
+  min-width: 0;
+  overflow: hidden;
+  border-radius: var(--radius-surface, #{$radius-default});
+  background: var(--surface, transparent);
+
+  &__media {
+    border-radius: 0;
+  }
+
+  &__body {
+    max-width: none;
+    padding: $space-2;
+  }
+}
+
+[data-variant="organic"] .card {
+  border: 1px solid color-mix(in srgb, currentColor 10%, transparent);
+}

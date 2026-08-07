@@ -1,0 +1,11 @@
+{
+  "primary": [
+    { "id": "home", "label": "Accueil", "href": "/", "enabled": true },
+    { "id": "links", "label": "Liens", "href": "/liens", "enabled": true },
+    { "id": "legal", "label": "Mentions légales", "href": "/mentions-legales", "enabled": true }
+  ],
+  "review": [
+    { "id": "system", "label": "System", "href": "/system", "enabled": true },
+    { "id": "branding", "label": "Branding", "href": "/branding", "enabled": true }
+  ]
+}

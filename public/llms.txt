@@ -1,0 +1,18 @@
+# Nom du studio
+
+> Une phrase courte qui présente l’activité.
+
+Canonical site: https://example.netlify.app
+Language: fr
+
+## Public pages
+
+- Nom du studio | Activité principale: https://example.netlify.app
+- Mentions légales | Nom du studio: https://example.netlify.app/mentions-legales
+
+## Contact
+
+- Email: bonjour@example.com
+- Location: Ville, France
+
+This file is generated from src/data/site.json and src/data/pages.json. Keep those sources accurate.

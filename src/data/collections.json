@@ -1,0 +1,56 @@
+{
+  "services": [
+    {
+      "id": "service-01",
+      "eyebrow": "01",
+      "title": "Service à présenter",
+      "text": ["Description à remplacer par le contenu du client."],
+      "links": [{ "label": "En savoir plus", "href": "/contact", "intent": "contact" }],
+      "featured": true
+    },
+    {
+      "id": "service-02",
+      "eyebrow": "02",
+      "title": "Deuxième service",
+      "text": ["Contenu placeholder volontairement court."],
+      "featured": true
+    },
+    {
+      "id": "service-03",
+      "eyebrow": "03",
+      "title": "Troisième service",
+      "text": ["Contenu placeholder à remplacer."],
+      "featured": true
+    }
+  ],
+  "reviews": [
+    {
+      "id": "review-01",
+      "text": ["Témoignage client à remplacer."],
+      "meta": [{ "label": "Nom du client" }]
+    }
+  ],
+  "links": [
+    {
+      "id": "link-01",
+      "title": "Découvrir le site",
+      "links": [{ "label": "Voir le site", "href": "/", "intent": "navigate" }],
+      "featured": true,
+      "group": "primary",
+      "enabled": true
+    },
+    {
+      "id": "link-02",
+      "title": "Prendre contact",
+      "links": [{ "label": "Écrire", "href": "mailto:bonjour@example.com", "intent": "contact" }],
+      "group": "primary",
+      "enabled": true
+    }
+  ],
+  "projects": [],
+  "events": [],
+  "products": [],
+  "locations": [],
+  "tips": [],
+  "quotes": []
+}

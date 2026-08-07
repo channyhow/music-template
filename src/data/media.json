@@ -1,0 +1,29 @@
+{
+  "home-cover": {
+    "id": "home-cover",
+    "type": "image",
+    "src": "/media/placeholders/landscape.svg",
+    "alt": "Image de couverture à remplacer.",
+    "width": 1600,
+    "height": 1067,
+    "focalPoint": { "x": 50, "y": 50 }
+  },
+  "profile-placeholder": {
+    "id": "profile-placeholder",
+    "type": "image",
+    "src": "/media/placeholders/portrait.svg",
+    "alt": "Portrait à remplacer.",
+    "width": 1200,
+    "height": 1600,
+    "focalPoint": { "x": 50, "y": 40 }
+  },
+  "placeholder-landscape": {
+    "id": "placeholder-landscape",
+    "type": "image",
+    "src": "/media/placeholders/landscape.svg",
+    "alt": "Image de démonstration à remplacer.",
+    "width": 1600,
+    "height": 1067,
+    "focalPoint": { "x": 50, "y": 50 }
+  }
+}

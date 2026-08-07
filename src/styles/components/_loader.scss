@@ -1,0 +1,58 @@
+@use "../foundation/tokens" as *;
+@use "../foundation/mixins" as *;
+
+$loader-cycle: $duration-slow * 3;
+
+.loader {
+  display: grid;
+  gap: $space-2;
+  width: min(100%, 24rem);
+}
+
+.loader__messages {
+  display: grid;
+  min-height: 1.5em;
+  overflow: hidden;
+
+  span {
+    grid-area: 1 / 1;
+    opacity: 0;
+    animation: loader-message $loader-cycle $ease-soft infinite;
+  }
+
+  span:nth-child(2) { animation-delay: $duration-slow; }
+  span:nth-child(3) { animation-delay: $duration-slow * 2; }
+}
+
+.loader__line {
+  display: block;
+  width: 100%;
+  height: 1px;
+  overflow: hidden;
+  background: color-mix(in srgb, currentColor 18%, transparent);
+
+  &::after {
+    content: "";
+    display: block;
+    width: 45%;
+    height: 100%;
+    background: currentColor;
+    animation: loader-line $duration-slow $ease-soft infinite alternate;
+  }
+}
+
+@keyframes loader-message {
+  0%, 28% { opacity: 1; transform: none; }
+  33%, 100% { opacity: 0; transform: translateY(-0.35em); }
+}
+
+@keyframes loader-line {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(222%); }
+}
+
+@include reduced-motion {
+  .loader__messages span:first-child { opacity: 1; }
+  .loader__messages span { animation: none; }
+  .loader__line::after { animation: none; transform: none; width: 100%; }
+}

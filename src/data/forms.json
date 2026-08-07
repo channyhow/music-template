@@ -1,0 +1,38 @@
+{
+  "contact": {
+    "id": "contact-form",
+    "name": "contact",
+    "submitLabel": "Envoyer",
+    "fields": [
+      { "name": "name", "label": "Nom", "type": "text", "required": true },
+      { "name": "email", "label": "E-mail", "type": "email", "required": true },
+      { "name": "phone", "label": "Téléphone", "type": "tel" },
+      { "name": "message", "label": "Message", "type": "textarea", "required": true, "placeholder": "Votre message" }
+    ]
+  },
+  "reservation": {
+    "id": "reservation-form",
+    "name": "reservation",
+    "submitLabel": "Demander une réservation",
+    "fields": [
+      { "name": "name", "label": "Nom", "type": "text", "required": true },
+      { "name": "email", "label": "E-mail", "type": "email", "required": true },
+      { "name": "phone", "label": "Téléphone", "type": "tel", "required": true },
+      { "name": "date", "label": "Date", "type": "date", "required": true },
+      { "name": "time", "label": "Heure", "type": "time", "required": true },
+      { "name": "guests", "label": "Personnes", "type": "number", "required": true, "min": 1, "max": 20, "step": 1 },
+      {
+        "name": "occasion",
+        "label": "Type de réservation",
+        "type": "select",
+        "options": [
+          { "label": "Réservation", "value": "reservation" },
+          { "label": "Cours / séance", "value": "session" },
+          { "label": "Événement privé", "value": "private" },
+          { "label": "Autre", "value": "other" }
+        ]
+      },
+      { "name": "message", "label": "Message", "type": "textarea", "placeholder": "Demande particulière, allergies, contexte…" }
+    ]
+  }
+}

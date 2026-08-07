@@ -1,0 +1,19 @@
+{
+  "name": "Nom du studio",
+  "short_name": "Studio",
+  "description": "Description courte de l’activité.",
+  "lang": "fr",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f6f5f3",
+  "theme_color": "#f6f5f3",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
