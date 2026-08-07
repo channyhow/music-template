@@ -1,0 +1,85 @@
+/* Project art direction — Maloya
+   Graphic, poster-like pacing using the shared component system. */
+
+:root {
+  --project-section-space: clamp(3rem, 7vw, 7rem);
+  --project-text-measure: 42rem;
+}
+
+.section {
+  --section-space: var(--project-section-space);
+  --text-width: var(--project-text-measure);
+}
+
+#home-opening {
+  min-height: 100svh;
+  display: grid;
+  align-items: end;
+  --title-width: 8ch;
+}
+
+#home-opening .textBlock__title {
+  font-size: clamp(5rem, 16vw, 16rem);
+  line-height: 0.78;
+  letter-spacing: -0.035em;
+  text-transform: uppercase;
+}
+
+#concerts-featured {
+  --section-space: clamp(2rem, 4vw, 4rem);
+}
+
+#concerts-featured .textBlock__title,
+#music-featured .textBlock__title,
+#press-featured .textBlock__title {
+  font-size: clamp(3.2rem, 8vw, 8rem);
+  line-height: 0.88;
+  text-transform: uppercase;
+}
+
+#music-featured {
+  transform: rotate(-0.35deg);
+}
+
+#press-featured {
+  transform: rotate(0.25deg);
+}
+
+#final-cta {
+  min-height: 86svh;
+  display: grid;
+  align-items: center;
+  --title-width: 9ch;
+}
+
+#final-cta .textBlock__title {
+  font-size: clamp(4rem, 12vw, 12rem);
+  line-height: 0.82;
+  text-transform: uppercase;
+}
+
+@media (min-width: 64rem) {
+  #concerts-featured .section__header,
+  #music-featured .section__header,
+  #press-featured .section__header {
+    max-width: 72rem;
+  }
+
+  #booking-default .split,
+  #contact-default .split {
+    grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.3fr);
+    gap: clamp(2rem, 6vw, 7rem);
+  }
+
+  #press-featured .grid {
+    grid-template-columns: 1.4fr 0.8fr 0.8fr;
+    align-items: start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #music-featured,
+  #press-featured {
+    transform: none;
+  }
+}
