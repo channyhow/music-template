@@ -20,13 +20,17 @@ export function SiteShell({ children }: { children: ReactNode }) {
       : siteData.theme.variant === "organic"
         ? fonts.organicHeading
         : fonts.classicHeading;
+  const tone = siteData.theme.tone as Tone;
+  const foreground = tone === "inverse" ? colors.secondary : colors.primary;
+  const background =
+    tone === "inverse" ? colors.primary : tone === "accent" ? colors.accent : colors.secondary;
 
   const themeStyle: ThemeStyle = {
     "--theme-primary": colors.primary,
     "--theme-secondary": colors.secondary,
     "--theme-accent": colors.accent,
-    "--primary": colors.primary,
-    "--secondary": colors.secondary,
+    "--primary": foreground,
+    "--secondary": background,
     "--accent": colors.accent,
     "--font-heading-classic": `"${fonts.classicHeading}"`,
     "--font-heading-editorial": `"${fonts.editorialHeading}"`,
@@ -40,7 +44,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
     <div
       className="site"
       data-variant={siteData.theme.variant as StyleVariant}
-      data-tone={siteData.theme.tone as Tone}
+      data-tone={tone}
       data-drawer={drawer ?? "closed"}
       data-overlay={overlayOpen ? "open" : "closed"}
       style={themeStyle}
