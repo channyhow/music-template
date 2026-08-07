@@ -1,5 +1,5 @@
 /* Project art direction — Maloya
-   Graphic, poster-like pacing using the shared component system. */
+   Graphic, immersive and image-led: a music world rather than a band template. */
 
 :root {
   --project-section-space: clamp(3rem, 7vw, 7rem);
@@ -11,6 +11,7 @@
   --text-width: var(--project-text-measure);
 }
 
+/* Entrance: atmosphere first, utility immediately available but visually secondary. */
 #home-opening {
   min-height: 100svh;
   display: grid;
@@ -25,6 +26,7 @@
   text-transform: uppercase;
 }
 
+/* After the immersive opening, the next date becomes a hard graphic beat. */
 #concerts-featured {
   --section-space: clamp(2rem, 4vw, 4rem);
 }
@@ -37,16 +39,30 @@
   text-transform: uppercase;
 }
 
+/* Alternate graphic pressure with breathing room so the world never becomes a wall of posters. */
 #music-featured {
-  transform: rotate(-0.35deg);
+  --section-space: clamp(6rem, 13vw, 13rem);
+  transform: rotate(-0.25deg);
 }
 
 #press-featured {
-  transform: rotate(0.25deg);
+  --section-space: clamp(4rem, 9vw, 9rem);
+  transform: rotate(0.2deg);
+}
+
+#social-default {
+  min-height: 65svh;
+  display: grid;
+  align-items: center;
+}
+
+#social-default .textBlock {
+  margin-inline: auto;
+  text-align: center;
 }
 
 #final-cta {
-  min-height: 86svh;
+  min-height: 90svh;
   display: grid;
   align-items: center;
   --title-width: 9ch;
