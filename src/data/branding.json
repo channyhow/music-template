@@ -1,80 +1,80 @@
 {
   "intro": {
     "eyebrow": "Direction de marque",
-    "title": "Une direction visuelle à ressentir avant de la construire.",
+    "title": "Une scène réunionnaise qui déborde de l’écran.",
     "text": [
-      "Cette page rassemble les choix proposés pour l’identité numérique : ton, typographie, couleur, image, forme et mouvement.",
-      "Elle sert de support de discussion avec le client. Elle ne modifie pas le site et n’est pas destinée à devenir un configurateur."
+      "La direction reprend le concept Maloya existant : live, archive, paysages réunionnais, couleurs presque fluorescentes et une énergie graphique plus pop.",
+      "Le site doit faire ressentir l’univers avant de détailler le groupe, tout en gardant concerts, écoute et booking immédiatement accessibles."
     ]
   },
   "concept": {
     "eyebrow": "Concept",
-    "title": "Calme, précis, mémorable.",
-    "text": [
-      "Une présence éditoriale plutôt que décorative. Des choix limités, cohérents et suffisamment distinctifs pour créer une identité sans surcharger l’expérience."
-    ],
-    "keywords": ["Éditorial", "Tactile", "Confiant", "Humain", "Durable"]
+    "title": "Solaire, scénique, tactile.",
+    "text": ["Une identité culturelle vivante plutôt qu’un site d’artiste noir et blanc générique : images de scène, paysages, affiches, couleur et mouvement forment une archive en mouvement."],
+    "keywords": ["Réunionnais", "Scénique", "Tactile", "Graphique", "Solaire", "Vivant", "Pop", "Archive"]
   },
   "palette": [
-    { "name": "Primary", "value": "#161616", "role": "Texte, structure, contraste" },
-    { "name": "Secondary", "value": "#f6f5f3", "role": "Fond principal, respiration" },
-    { "name": "Accent", "value": "#d85234", "role": "Accent ponctuel, action, signal" }
+    { "name": "Night", "value": "#12100E", "role": "Fond scène, contraste" },
+    { "name": "Paper", "value": "#EDE6DC", "role": "Texte, archive, respiration" },
+    { "name": "Sun", "value": "#E48F35", "role": "Chaleur, lumière, secondaire" },
+    { "name": "Neon pink", "value": "#F01AB7", "role": "Accent fort, signal live" },
+    { "name": "Acid green", "value": "#BBF23B", "role": "Accent complémentaire, merchandising/affiche" }
   ],
   "typography": {
     "heading": {
-      "label": "Display",
+      "label": "Display graphique",
       "family": "Playfair Display",
-      "sample": "Une présence qui laisse de l’espace."
+      "sample": "La scène avant le silence."
     },
     "body": {
       "label": "Texte courant",
       "family": "DM Sans",
-      "sample": "Une lecture directe, souple et discrète qui laisse les images et les idées prendre le premier rôle."
+      "sample": "Une base lisible laisse les affiches, couleurs et photographies de scène porter la personnalité."
     },
-    "note": "Les polices finales doivent être licenciées et auto-hébergées. Les familles présentes dans le starter servent de direction et de placeholder."
+    "note": "Le projet source utilise Neue Haas et Liquida comme direction. Réintégrer les familles finales uniquement si les licences et fichiers sont disponibles."
   },
   "imagery": {
     "eyebrow": "Image",
-    "title": "Photographie avant illustration décorative.",
+    "title": "Scène, île, archive.",
     "text": [
-      "Privilégier des images avec présence, matière, lumière naturelle et cadrages intentionnels.",
-      "Éviter les banques d’images trop lisses, les séries répétitives et les visuels ajoutés uniquement pour remplir un espace."
+      "Alterner photographie live, paysage réunionnais, posters et détails de marque pour éviter une galerie de concerts uniforme.",
+      "Les vidéos source — concert, vagues, côte, coucher de soleil, palmier — sont particulièrement adaptées aux fonds ou ScrollScenes, avec poster et reduced-motion fallback."
     ],
-    "media": ["placeholder-landscape", "profile-placeholder", "home-cover"]
+    "media": ["music-live", "music-mafate", "music-poster"]
   },
   "geometry": {
     "eyebrow": "Formes & surfaces",
-    "title": "La géométrie suit le caractère de la marque.",
+    "title": "Comme des affiches qui se superposent.",
     "text": [
-      "Classic reste équilibré, Editorial plus net et graphique, Organic plus souple avec rayons généreux, masques organiques et mouvements plus fluides.",
-      "Les effets de verre, grain, cadres et formes restent des traitements optionnels et réutilisables, jamais une obligation."
+      "Editorial reste la structure, mais les compositions peuvent accepter plus de chevauchement, de cadrages francs et de surfaces contrastées que les autres templates.",
+      "La couleur doit signaler concerts, sorties ou appels à l’action, pas devenir un bruit permanent."
     ],
-    "samples": ["frame", "effectGlass", "organic"]
+    "samples": ["frame", "effectGlass", "editorial"]
   },
   "motion": {
     "eyebrow": "Mouvement",
-    "title": "Le mouvement accompagne la lecture.",
+    "title": "Une archive vivante, pas un clip permanent.",
     "text": [
-      "Reveal pour la hiérarchie, parallax pour la profondeur, drift pour des éléments décoratifs, draw pour une ligne ou une progression, Timeline pour une histoire chronologique, ScrollPanel pour une narration en panneaux et footer reveal pour une fin de page plus cinématographique.",
-      "Chaque comportement reste optionnel et possède un fallback simple pour reduced motion et petits écrans."
+      "Hero média, parallax, mask/reveal, ScrollPanel et quelques accents plus rapides peuvent traduire l’énergie live.",
+      "Les dates, boutons d’écoute et informations de booking restent stables et lisibles même sans animation."
     ],
-    "behaviors": ["Reveal", "Parallax", "Drift", "Draw", "Timeline", "ScrollPanel", "Footer reveal"]
+    "behaviors": ["Hero media", "Reveal", "Parallax", "Media reveal", "ScrollPanel", "Footer reveal"]
   },
   "application": {
-    "eyebrow": "Application",
-    "title": "Ce que cette direction change concrètement sur le site.",
+    "eyebrow": "Conversion",
+    "title": "Du public au programmateur.",
     "items": [
-      { "title": "Hiérarchie", "text": ["Des titres forts, peu de niveaux concurrents et des actions clairement prioritaires."] },
-      { "title": "Composition", "text": ["Asymétrie contrôlée, respiration, images fortes et séquences éditoriales plutôt qu’une succession uniforme de blocs."] },
-      { "title": "Interaction", "text": ["Des états lisibles, des transitions douces et des effets de scroll réservés aux moments où ils apportent du sens."] },
-      { "title": "Conversion", "text": ["La preuve, l’information pratique et l’appel à l’action apparaissent au moment où ils aident réellement la décision."] }
+      { "title": "Live", "text": ["Les prochaines dates sont visibles avant la biographie ou les archives."] },
+      { "title": "Écoute", "text": ["Chaque sortie mène directement vers la plateforme d’écoute."] },
+      { "title": "Preuve", "text": ["Presse, interviews et kit professionnel donnent du contexte et facilitent la programmation."] },
+      { "title": "Booking", "text": ["Le contact professionnel est distinct du message fan et demande les informations utiles au projet."
+      ] }
     ]
   },
   "status": {
     "eyebrow": "Statut",
-    "title": "Moodboard de travail",
-    "text": [
-      "Cette direction sert à aligner le client et Chow Studio avant la phase de production. Les couleurs, typographies, images et références restent à valider avant intégration finale."
+    "title": "Concept fictif Maloya",
+    "text": ["Le groupe, les sorties, les dates et les comptes sociaux sont fictifs et repris du projet music-improved. Cette distinction doit rester visible dans toute démonstration publique."
     ]
   }
 }
