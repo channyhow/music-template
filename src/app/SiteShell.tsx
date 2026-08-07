@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import type { CSSProperties, ReactNode } from "react";
 
 import { Drawer } from "@/components/navigation/Drawer";
 import { Header } from "@/components/navigation/Header";
@@ -7,10 +7,34 @@ import siteData from "@/data/site.json";
 import { selectDrawerView, selectOverlayOpen, useUIStore } from "@/state/uiStore";
 import type { StyleVariant, Tone } from "@/types/content";
 
+type ThemeStyle = CSSProperties & Record<`--${string}`, string>;
+
 export function SiteShell({ children }: { children: ReactNode }) {
   const drawer = useUIStore(selectDrawerView);
   const overlayOpen = useUIStore(selectOverlayOpen);
   const scrollProgress = siteData.ui.experience.scrollProgress as ScrollProgressMode | false;
+  const { colors, fonts } = siteData.theme;
+  const headingFont =
+    siteData.theme.variant === "editorial"
+      ? fonts.editorialHeading
+      : siteData.theme.variant === "organic"
+        ? fonts.organicHeading
+        : fonts.classicHeading;
+
+  const themeStyle: ThemeStyle = {
+    "--theme-primary": colors.primary,
+    "--theme-secondary": colors.secondary,
+    "--theme-accent": colors.accent,
+    "--primary": colors.primary,
+    "--secondary": colors.secondary,
+    "--accent": colors.accent,
+    "--font-heading-classic": `"${fonts.classicHeading}"`,
+    "--font-heading-editorial": `"${fonts.editorialHeading}"`,
+    "--font-heading-organic": `"${fonts.organicHeading}"`,
+    "--font-body-project": `"${fonts.body}"`,
+    "--font-heading": `"${headingFont}"`,
+    "--font-body": `"${fonts.body}"`,
+  };
 
   return (
     <div
@@ -19,6 +43,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
       data-tone={siteData.theme.tone as Tone}
       data-drawer={drawer ?? "closed"}
       data-overlay={overlayOpen ? "open" : "closed"}
+      style={themeStyle}
     >
       <ScrollProgress mode={scrollProgress} />
       <Header />
