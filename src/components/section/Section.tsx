@@ -3,6 +3,8 @@ import clsx from "clsx";
 import { motion, useReducedMotion, useScroll, useTransform } from "motion/react";
 
 import { Card } from "@/components/content/Card";
+import { Carousel } from "@/components/content/Carousel";
+import { Gallery } from "@/components/content/Gallery";
 import { Media } from "@/components/content/Media";
 import { TextBlock } from "@/components/content/TextBlock";
 import { Form } from "@/components/forms/Form";
@@ -39,51 +41,89 @@ function SceneInner({ children }: { children: ReactNode }) {
 
 export function Section({ block }: SectionProps) {
   const reduceMotion = useReducedMotion();
-
+  const layout = block.layout ?? "text";
+  const header = block.content?.header;
   const items = [
     ...(block.content?.items ?? []),
     ...resolveCollection(block.source),
   ];
-
-  const header = block.content?.header;
   const formRef = block.content?.form;
   const form = typeof formRef === "string" ? formRegistry[formRef] : formRef;
-  const layout = block.layout ?? "text";
-  const mediaRef = Array.isArray(block.content?.media)
-    ? block.content?.media[0]
-    : block.content?.media;
-  const media = resolveMedia(mediaRef);
+  const mediaRefs = block.content?.media
+    ? Array.isArray(block.content.media)
+      ? block.content.media
+      : [block.content.media]
+    : [];
+  const mediaItems = mediaRefs
+    .map((ref) => resolveMedia(ref))
+    .filter((item): item is NonNullable<typeof item> => Boolean(item));
+  const media = mediaItems[0];
   const motionEnabled = siteData.ui.experience.sectionReveal && !reduceMotion;
   const shouldReveal = motionEnabled && block.motion !== "none";
   const shouldTrackScroll = motionEnabled && block.motion === "scene";
 
-  const cards = items.length ? (
-    <Grid className="section__body">
-      {items.map((item, index) => (
-        <Card key={item.id ?? `${item.title ?? "item"}-${index}`} item={item} />
-      ))}
-    </Grid>
-  ) : null;
+  const cards = items.map((item, index) => (
+    <Card key={item.id ?? `${item.title ?? "item"}-${index}`} item={item} />
+  ));
 
+  const cardsGrid = cards.length ? <Grid className="section__body">{cards}</Grid> : null;
   const secondary = media ? (
     <Media media={media} sizes="(min-width: 64rem) 50vw, 100vw" />
   ) : form ? (
     <Form schema={form} />
-  ) : cards;
+  ) : cardsGrid;
 
-  const body = layout === "split" ? (
-    <Split
-      primary={header ? <TextBlock content={header} /> : null}
-      secondary={secondary}
-    />
-  ) : (
-    <>
-      {header ? <TextBlock content={header} className="section__header" /> : null}
-      {media ? <Media media={media} className="section__media" /> : null}
-      {form ? <Form schema={form} /> : null}
-      {cards}
-    </>
-  );
+  let body: ReactNode;
+
+  if (layout === "split") {
+    body = (
+      <Split
+        primary={header ? <TextBlock content={header} /> : null}
+        secondary={secondary}
+      />
+    );
+  } else if (layout === "media-overlay") {
+    body = (
+      <div className="section__mediaOverlay">
+        {media ? <Media media={media} className="section__media" sizes="100vw" /> : null}
+        {header ? (
+          <div className="section__overlayContent">
+            <TextBlock content={header} className="section__header" />
+          </div>
+        ) : null}
+      </div>
+    );
+  } else if (layout === "gallery") {
+    body = (
+      <>
+        {header ? <TextBlock content={header} className="section__header" /> : null}
+        {mediaItems.length ? <Gallery items={mediaItems} layout="editorial" /> : null}
+      </>
+    );
+  } else if (layout === "carousel") {
+    body = (
+      <>
+        {header ? <TextBlock content={header} className="section__header" /> : null}
+        {cards.length ? <Carousel>{cards}</Carousel> : null}
+      </>
+    );
+  } else if (layout === "media") {
+    body = (
+      <>
+        {header ? <TextBlock content={header} className="section__header" /> : null}
+        {media ? <Media media={media} className="section__media" /> : null}
+      </>
+    );
+  } else {
+    body = (
+      <>
+        {header ? <TextBlock content={header} className="section__header" /> : null}
+        {media ? <Media media={media} className="section__media" /> : null}
+        {form ? <Form schema={form} /> : null}
+        {cardsGrid}
+      </>
+    );
+  }
 
   return (
     <motion.section
@@ -98,11 +138,7 @@ export function Section({ block }: SectionProps) {
       viewport={motionConfig.viewport}
       transition={revealTransition}
     >
-      {shouldTrackScroll ? (
-        <SceneInner>{body}</SceneInner>
-      ) : (
-        <div className="section__inner">{body}</div>
-      )}
+      {shouldTrackScroll ? <SceneInner>{body}</SceneInner> : <div className="section__inner">{body}</div>}
     </motion.section>
   );
 }
