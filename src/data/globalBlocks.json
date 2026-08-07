@@ -6,78 +6,97 @@
     "motion": "scene",
     "content": {
       "header": {
-        "eyebrow": "Nom du studio",
-        "title": "Une proposition claire et mémorable.",
-        "text": ["Une introduction courte à remplacer."],
-        "links": [{ "label": "Découvrir", "href": "#services", "intent": "navigate" }]
+        "eyebrow": "Maloya · La Réunion",
+        "title": "Musique réunionnaise, scène vivante.",
+        "text": ["Un concept immersif où le live arrive avant la biographie : écouter, voir la prochaine date, puis entrer dans l’univers du groupe."],
+        "links": [
+          { "label": "Voir les concerts", "href": "/concerts", "intent": "navigate", "priority": "primary" },
+          { "label": "Écouter", "href": "/musique", "intent": "navigate", "priority": "secondary" }
+        ]
       },
       "media": "home-cover"
     }
   },
-  "home-services": {
-    "id": "home-services",
+  "concerts-featured": {
+    "id": "concerts-featured",
+    "type": "Section",
+    "layout": "carousel",
+    "source": { "collection": "concerts", "query": { "featured": true, "limit": 3 } },
+    "content": {
+      "header": {
+        "eyebrow": "Concerts",
+        "title": "La prochaine date ne devrait jamais être difficile à trouver.",
+        "text": ["Les dates visibles ici proviennent du concept Maloya et restent fictives."
+        ]
+      }
+    }
+  },
+  "music-featured": {
+    "id": "music-featured",
+    "type": "Section",
+    "layout": "carousel",
+    "source": { "collection": "music", "query": { "featured": true, "limit": 4 } },
+    "content": {
+      "header": {
+        "eyebrow": "Musique",
+        "title": "Des disques comme des paysages.",
+        "text": ["Les projets fictifs du concept deviennent un catalogue facile à parcourir et directement relié à l’écoute."]
+      }
+    }
+  },
+  "press-featured": {
+    "id": "press-featured",
     "type": "Section",
     "layout": "grid",
-    "source": { "collection": "services", "query": { "featured": true, "limit": 3 } },
+    "source": { "collection": "press", "query": { "featured": true, "limit": 3 } },
     "content": {
-      "header": { "eyebrow": "Services", "title": "Ce que nous proposons." }
+      "header": {
+        "eyebrow": "Presse & archive",
+        "title": "Donner du contexte à la scène.",
+        "text": ["Articles, interviews et kit professionnel structurent la preuve et facilitent le travail des programmateurs et journalistes."]
+      }
+    }
+  },
+  "booking-default": {
+    "id": "booking-default",
+    "type": "Section",
+    "layout": "split",
+    "frame": true,
+    "content": {
+      "header": {
+        "eyebrow": "Booking",
+        "title": "Programmer Maloya.",
+        "text": ["Un formulaire professionnel séparé des messages du public pour qualifier date, lieu, contexte et besoins dès le premier contact."]
+      },
+      "form": "reservation"
     }
   },
   "contact-default": {
     "id": "contact-default",
     "type": "Section",
     "layout": "split",
-    "frame": true,
     "content": {
       "header": {
         "eyebrow": "Contact",
-        "title": "Parlons de votre projet.",
-        "text": ["Texte de contact à adapter à l’activité."]
+        "title": "Une date, une collaboration, un mot après un concert.",
+        "text": ["Le sujet du message oriente la demande vers booking, presse, collaboration ou contact général."]
       },
       "form": "contact"
-    }
-  },
-  "reservation-default": {
-    "id": "reservation-default",
-    "type": "Section",
-    "layout": "split",
-    "frame": true,
-    "content": {
-      "header": {
-        "eyebrow": "Réserver",
-        "title": "Choisissez un moment.",
-        "text": ["Une demande simple à confirmer selon les disponibilités."]
-      },
-      "form": "reservation"
-    }
-  },
-  "reviews-default": {
-    "id": "reviews-default",
-    "type": "Section",
-    "layout": "carousel",
-    "source": { "collection": "reviews" },
-    "content": {
-      "header": { "eyebrow": "Avis", "title": "Ce qu’ils en retiennent." }
     }
   },
   "social-default": {
     "id": "social-default",
     "type": "Section",
-    "layout": "list",
-    "source": { "collection": "links", "query": { "enabled": true } },
-    "content": {
-      "header": { "eyebrow": "Suivre", "title": "Retrouvez-nous ailleurs." }
-    }
-  },
-  "location-default": {
-    "id": "location-default",
-    "type": "Section",
-    "layout": "split",
+    "layout": "statement",
     "content": {
       "header": {
-        "eyebrow": "Adresse",
-        "title": "Nous trouver.",
-        "text": ["Adresse et informations pratiques issues des données du site."]
+        "eyebrow": "Écouter · regarder · suivre",
+        "title": "Prolonger la scène ailleurs.",
+        "links": [
+          { "label": "Spotify", "href": "https://spotify.com/maloya.band", "intent": "navigate" },
+          { "label": "YouTube", "href": "https://youtube.com/maloya.band", "intent": "navigate" },
+          { "label": "Instagram", "href": "https://instagram.com/maloya.band", "intent": "navigate" }
+        ]
       }
     }
   },
@@ -88,11 +107,11 @@
     "tone": "inverse",
     "content": {
       "header": {
-        "eyebrow": "À vous",
-        "title": "On commence ?",
+        "eyebrow": "Prochaine étape",
+        "title": "Voir Maloya sur scène, ou les faire venir sur la vôtre.",
         "links": [
-          { "label": "Prendre contact", "href": "#contact", "intent": "contact", "priority": "primary" },
-          { "label": "Réserver", "href": "#reservation", "intent": "book", "priority": "secondary" }
+          { "label": "Voir les dates", "href": "/concerts", "intent": "navigate", "priority": "primary" },
+          { "label": "Booking professionnel", "href": "/contact", "intent": "contact", "priority": "secondary" }
         ]
       }
     }
@@ -103,9 +122,9 @@
     "layout": "statement",
     "content": {
       "header": {
-        "title": "Nom du studio",
-        "text": ["Une présentation courte à remplacer."],
-        "media": "profile-placeholder"
+        "title": "Maloya",
+        "text": ["Musique réunionnaise, scène vivante · concept fictif."],
+        "media": "music-live"
       }
     }
   },
@@ -123,26 +142,16 @@
       "header": { "title": "Mentions légales" },
       "items": [
         {
-          "title": "Éditeur du site",
-          "text": [
-            "Nom ou raison sociale : à compléter.",
-            "Adresse : à compléter.",
-            "Numéro SIRET ou équivalent : à compléter.",
-            "Directeur ou directrice de la publication : à compléter.",
-            "Adresse e-mail : à compléter."
-          ]
+          "title": "Projet fictif",
+          "text": ["Maloya est un groupe fictif imaginé dans le cadre d’une étude de cas créative. Le projet n’est affilié à aucun groupe réel, label ou structure existante."]
+        },
+        {
+          "title": "Direction artistique & développement",
+          "text": ["Concept, design et développement réalisés par Chow Studio autour de la musique, du live et des paysages réunionnais."]
         },
         {
           "title": "Hébergement",
-          "text": [
-            "Le site est hébergé par Netlify, Inc.",
-            "Informations d’hébergement à vérifier et compléter au moment de la publication."
-          ]
-        },
-        {
-          "title": "Création du site",
-          "text": ["Conception, direction artistique et développement : Channy How-Choong · Chow Studio."],
-          "links": [{ "label": "@hellochowstudio", "href": "https://www.instagram.com/hellochowstudio", "intent": "navigate" }]
+          "text": ["Le site est hébergé par Netlify, Inc. Les informations doivent être vérifiées au moment de la publication."]
         }
       ]
     }
@@ -153,10 +162,13 @@
     "layout": "list",
     "content": {
       "header": {
-        "eyebrow": "Nom du studio",
-        "text": ["Création du site : Channy How-Choong · Chow Studio."],
+        "eyebrow": "Maloya",
+        "text": ["Saint-Denis · La Réunion · concept fictif.", "Création du site : Channy How-Choong · Chow Studio."],
         "links": [
-          { "label": "Instagram", "href": "https://instagram.com/", "intent": "navigate" },
+          { "label": "Concerts", "href": "/concerts", "intent": "navigate" },
+          { "label": "Musique", "href": "/musique", "intent": "navigate" },
+          { "label": "Presse", "href": "/presse", "intent": "navigate" },
+          { "label": "Booking", "href": "/contact", "intent": "contact" },
           { "label": "Mentions légales", "href": "/mentions-legales", "intent": "navigate" }
         ]
       }
