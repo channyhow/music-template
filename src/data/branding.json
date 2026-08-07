@@ -1,17 +1,25 @@
 {
   "intro": {
     "eyebrow": "Direction de marque",
-    "title": "Une scène réunionnaise qui déborde de l’écran.",
-    "text": [
-      "La direction reprend le concept Maloya existant : live, archive, paysages réunionnais, affiches et une énergie graphique assumée.",
-      "Le site doit faire ressentir l’univers avant de détailler le groupe, tout en gardant concerts, écoute et booking immédiatement accessibles."
-    ]
+    "title": "Une affiche vivante : le site doit presque faire du bruit.",
+    "text": ["Maloya est le projet le plus graphique de la famille. Il peut assumer l’échelle, la répétition, le contraste, les crops francs et des moments typographiques qui prennent tout l’écran.", "L’énergie n’excuse pas le chaos : prochaine date, écoute et booking doivent rester immédiatement identifiables pour le public comme pour les professionnels."]
   },
   "concept": {
     "eyebrow": "Concept",
     "title": "Solaire, scénique, tactile.",
-    "text": ["Une identité culturelle vivante plutôt qu’un site d’artiste noir et blanc générique. La palette source est volontairement réduite dans l’interface : noir, papier et jaune portent le système ; orange et rose restent des accents d’affiche ponctuels."],
+    "text": ["Une identité culturelle vivante plutôt qu’un site d’artiste noir et blanc générique. Noir, papier et jaune portent l’interface ; orange et rose apparaissent comme des encres d’affiche, rarement et avec impact."],
     "keywords": ["Réunionnais", "Scénique", "Tactile", "Graphique", "Solaire", "Vivant", "Archive"]
+  },
+  "storytelling": {
+    "eyebrow": "Storytelling & conversion",
+    "title": "Impact → date → son → univers → booking.",
+    "chapters": [
+      { "step": "01", "title": "Faire une entrée", "text": "Le hero fonctionne comme une affiche ou un générique : image/vidéo, nom et statement surdimensionné. Très peu de texte." },
+      { "step": "02", "title": "Mettre la scène au présent", "text": "La prochaine date arrive immédiatement, traitée comme une information éditoriale majeure et non comme une petite carte." },
+      { "step": "03", "title": "Faire écouter", "text": "Sorties, vidéos et paysages construisent un rythme d’archive ; chaque objet doit mener directement vers l’écoute ou le visionnage." },
+      { "step": "04", "title": "Donner de la profondeur", "text": "Presse, histoire et territoire arrivent après l’expérience sensible et renforcent la singularité culturelle." },
+      { "step": "05", "title": "Séparer les publics", "text": "Booking professionnel, presse et messages du public utilisent des entrées distinctes pour éviter la confusion." }
+    ]
   },
   "palette": [
     { "name": "Night", "value": "#0e0e0e", "role": "Structure, scène, contraste" },
@@ -21,58 +29,60 @@
     { "name": "Signal pink", "value": "#f01ab7", "role": "Accent exceptionnel pour campagne ou sortie" }
   ],
   "typography": {
-    "heading": {
-      "label": "Display scène",
-      "family": "Anton",
-      "sample": "La scène avant le silence."
-    },
-    "body": {
-      "label": "Texte courant / archive",
-      "family": "Cutive Mono",
-      "sample": "Une voix plus brute et documentaire pour les dates, crédits, archives et informations du groupe."
-    },
-    "note": "Bodoni Moda peut apparaître comme contraste éditorial et Unbounded comme accent graphique. Ne pas utiliser les quatre familles simultanément dans une même composition."
+    "heading": { "label": "Display scène", "family": "Anton", "sample": "LA SCÈNE AVANT LE SILENCE." },
+    "body": { "label": "Texte courant / archive", "family": "Cutive Mono", "sample": "Dates, crédits, lieux, notes et informations prennent une voix plus brute et documentaire." },
+    "scale": "Échelle la plus extrême de la famille : headlines pouvant dépasser le viewport et être partiellement cropées. Le mono reste petit, net et fonctionnel. Bodoni Moda sert de rupture éditoriale ; Unbounded uniquement comme signal.",
+    "note": "Ne jamais faire concourir Anton, Bodoni, Unbounded et Cutive Mono dans la même section. Une voix dominante + une voix fonctionnelle."
   },
   "imagery": {
     "eyebrow": "Image",
     "title": "Scène, île, archive.",
-    "text": [
-      "Alterner photographie live, paysage réunionnais, posters et détails de marque pour éviter une galerie de concerts uniforme.",
-      "Les médias source sont repris directement du projet music-improved et doivent rester plus importants que les effets graphiques."
-    ],
+    "text": ["Alterner live, paysage réunionnais, posters, détails, flash et images plus documentaires. Le contraste entre territoire et scène est une partie du récit.", "Accepter les crops agressifs, images bord à bord et superpositions ; ne pas uniformiser toutes les photos dans le même ratio de carte."],
     "media": ["music-live", "music-guitar", "music-mafate", "music-cilaos", "music-fournaise", "music-poster"]
+  },
+  "composition": {
+    "eyebrow": "UI / UX",
+    "title": "Poster system, pas portfolio en cartes.",
+    "rules": [
+      "Plus forte asymétrie et plus forte variation d’échelle de tous les projets.",
+      "Utiliser des statements géants, listes de dates pleine largeur, bandeaux/tickers non critiques et images superposées.",
+      "Les Cards restent possibles pour l’archive mais ne doivent pas devenir la grammaire dominante.",
+      "Les sections peuvent changer radicalement de densité : impact très dense puis grand vide, comme une setlist.",
+      "Sur mobile, conserver l’énergie avec typographie cropée et scroll horizontal maîtrisé, sans sacrifier la lisibilité des dates et CTA."
+    ]
   },
   "geometry": {
     "eyebrow": "Formes & surfaces",
     "title": "Comme des affiches qui se superposent.",
-    "text": [
-      "Editorial reste la structure, mais les compositions peuvent accepter plus de chevauchement, de cadrages francs et de surfaces contrastées que les autres templates.",
-      "La couleur doit signaler concerts, sorties ou appels à l’action, pas devenir un bruit permanent."
-    ],
-    "samples": ["frame", "effectGlass", "editorial"]
+    "text": ["Angles francs, très peu de radius, règles épaisses ou fines selon le contexte, surfaces colorées utilisées comme papier imprimé.", "La couleur signale concerts, sorties ou appels à l’action ; elle n’est pas un fond permanent décoratif."],
+    "samples": ["poster-grid", "overlap", "hard-crop", "ticker"]
   },
   "motion": {
     "eyebrow": "Mouvement",
     "title": "Une archive vivante, pas un clip permanent.",
-    "text": [
-      "Hero média, parallax, mask/reveal, ScrollPanel et quelques accents plus rapides peuvent traduire l’énergie live.",
-      "Les dates, boutons d’écoute et informations de booking restent stables et lisibles même sans animation."
-    ],
-    "behaviors": ["Hero media", "Reveal", "Parallax", "Media reveal", "ScrollPanel", "Footer reveal"]
+    "text": ["Hero média, mask/reveal, scroll-linked type ou image et quelques transitions plus rapides peuvent traduire l’énergie live.", "Dates, écoute et booking restent stables et utilisables sans animation. Reduced motion transforme les effets en compositions statiques fortes."],
+    "behaviors": ["Hero media", "Mask reveal", "Scroll-linked type ponctuel", "Marquee non critique", "Footer reveal"]
+  },
+  "conversion": {
+    "primary": "Voir la prochaine date",
+    "secondary": "Écouter",
+    "professional": "Booking / presse",
+    "proof": ["Live", "Presse", "Archive", "Kit professionnel"],
+    "mobile": "Prochaine date et écoute doivent être visibles très tôt ; les expérimentations graphiques viennent après ces deux actions."
   },
   "application": {
-    "eyebrow": "Conversion",
-    "title": "Du public au programmateur.",
+    "eyebrow": "Application",
+    "title": "Le projet où le système Chow peut être le plus expressif.",
     "items": [
-      { "title": "Live", "text": ["Les prochaines dates sont visibles avant la biographie ou les archives."] },
+      { "title": "Live", "text": ["La prochaine date devient une pièce graphique majeure."] },
       { "title": "Écoute", "text": ["Chaque sortie mène directement vers la plateforme d’écoute."] },
-      { "title": "Preuve", "text": ["Presse, interviews et kit professionnel donnent du contexte et facilitent la programmation."] },
+      { "title": "Preuve", "text": ["Presse, interviews et kit professionnel facilitent la programmation."] },
       { "title": "Booking", "text": ["Le contact professionnel est distinct du message fan et demande les informations utiles au projet."] }
     ]
   },
   "status": {
-    "eyebrow": "Statut",
-    "title": "Concept fictif Maloya",
-    "text": ["Le groupe, les sorties, les dates et les comptes sociaux sont fictifs et repris du projet music-improved. Les médias source sont importables dans le clone via la commande dédiée."]
+    "eyebrow": "Direction retenue",
+    "title": "Graphique, culturel, scénique — jamais template music dark générique.",
+    "text": ["Le groupe, les sorties, les dates et les comptes sociaux sont fictifs et repris du projet music-improved. Les médias source sont importables via la commande dédiée."]
   }
 }
