@@ -1,15 +1,16 @@
 {
   "booking": {
-    "default": "#reservation",
-    "studio": "#reservation",
-    "private": "#reservation"
+    "default": "/contact",
+    "professional": "/contact"
   },
   "social": {
-    "instagram": "https://instagram.com/",
-    "googleReviews": ""
+    "instagram": "https://instagram.com/maloya.band",
+    "facebook": "https://facebook.com/maloya.band",
+    "youtube": "https://youtube.com/maloya.band",
+    "spotify": "https://spotify.com/maloya.band"
   },
   "external": {
-    "maps": "",
+    "tickets": "https://azenda.re/",
     "calendar": ""
   }
 }
