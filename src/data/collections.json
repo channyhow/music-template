@@ -1,52 +1,143 @@
 {
-  "services": [
+  "concerts": [
     {
-      "id": "service-01",
-      "eyebrow": "01",
-      "title": "Service à présenter",
-      "text": ["Description à remplacer par le contenu du client."],
-      "links": [{ "label": "En savoir plus", "href": "/contact", "intent": "contact" }],
-      "featured": true
+      "id": "event-salazie",
+      "eyebrow": "15 novembre 2026 · Salazie",
+      "title": "Concert acoustique",
+      "text": ["Scène des Hauts · Un format intime autour des morceaux emblématiques du groupe."],
+      "media": "music-guitar",
+      "links": [{ "label": "Informations", "href": "https://azenda.re/", "intent": "navigate" }],
+      "featured": true,
+      "order": 1
     },
     {
-      "id": "service-02",
-      "eyebrow": "02",
-      "title": "Deuxième service",
-      "text": ["Contenu placeholder volontairement court."],
-      "featured": true
+      "id": "event-saint-pierre",
+      "eyebrow": "6 décembre 2026 · Saint-Pierre",
+      "title": "Grande scène réunionnaise",
+      "text": ["Front de mer · Une soirée populaire pensée pour rassembler plusieurs générations."],
+      "media": "music-live",
+      "links": [{ "label": "Informations", "href": "https://azenda.re/", "intent": "navigate" }],
+      "featured": true,
+      "order": 2
     },
     {
-      "id": "service-03",
-      "eyebrow": "03",
-      "title": "Troisième service",
-      "text": ["Contenu placeholder à remplacer."],
-      "featured": true
+      "id": "event-paris",
+      "eyebrow": "20 décembre 2026 · Paris",
+      "title": "Maloya · Olympia",
+      "text": ["Date fictive du concept source. Informations et disponibilité à confirmer dans un projet réel."],
+      "media": "music-guitar",
+      "links": [{ "label": "À venir", "href": "https://www.olympiahall.com/agenda/", "intent": "navigate" }],
+      "featured": true,
+      "order": 3
     }
   ],
-  "reviews": [
+  "music": [
     {
-      "id": "review-01",
-      "text": ["Témoignage client à remplacer."],
-      "meta": [{ "label": "Nom du client" }]
+      "id": "album-roots",
+      "eyebrow": "Album · 2026",
+      "title": "Racines",
+      "text": ["Chants, percussions et mémoire créole. Un album fictif autour de la transmission, des voix et des rythmes réunionnais."],
+      "media": "music-mafate",
+      "links": [{ "label": "Écouter", "href": "https://open.spotify.com/", "intent": "navigate" }],
+      "featured": true,
+      "order": 1
+    },
+    {
+      "id": "single-fonker",
+      "eyebrow": "Single · 2025",
+      "title": "Fonker",
+      "text": ["Un morceau fictif autour de la parole et de la mémoire, entre spoken word créole et percussions minimales."],
+      "media": "music-cilaos",
+      "links": [{ "label": "Écouter", "href": "https://open.spotify.com/", "intent": "navigate" }],
+      "featured": true,
+      "order": 2
+    },
+    {
+      "id": "album-live",
+      "eyebrow": "Live · 2024",
+      "title": "Live dann ron",
+      "text": ["Captation de scène et énergie collective. Un projet live fictif autour de la chaleur du public."],
+      "media": "music-guitar",
+      "links": [{ "label": "Écouter", "href": "https://open.spotify.com/", "intent": "navigate" }],
+      "featured": true,
+      "order": 3
+    },
+    {
+      "id": "album-kabar",
+      "eyebrow": "Album · 2023",
+      "title": "Kabar",
+      "text": ["Voix collectives et battements nocturnes, inspirés des rassemblements maloya et des rythmes traditionnels réunionnais."],
+      "media": "music-fournaise",
+      "links": [{ "label": "Écouter", "href": "https://open.spotify.com/", "intent": "navigate" }],
+      "featured": true,
+      "order": 4
+    }
+  ],
+  "press": [
+    {
+      "id": "press-reunion-culture",
+      "eyebrow": "Article · 12 septembre 2026",
+      "title": "Maloya, une scène qui traverse les générations",
+      "text": ["Article fictif autour de la place du groupe dans la mémoire musicale réunionnaise."],
+      "media": "music-live",
+      "featured": true,
+      "order": 1
+    },
+    {
+      "id": "press-radio",
+      "eyebrow": "Interview · 4 novembre 2026",
+      "title": "Entretien radio autour des concerts de décembre",
+      "text": ["Interview fictive sur la tournée, les morceaux emblématiques et le lien avec le public."],
+      "media": "music-guitar",
+      "featured": true,
+      "order": 2
+    },
+    {
+      "id": "press-kit",
+      "eyebrow": "Presse · 2026",
+      "title": "Dossier presse et visuels professionnels",
+      "text": ["Point d’entrée pour dossier presse, photos officielles et informations de contact."],
+      "media": "music-poster",
+      "featured": true,
+      "order": 3
     }
   ],
   "links": [
     {
-      "id": "link-01",
-      "title": "Découvrir le site",
-      "links": [{ "label": "Voir le site", "href": "/", "intent": "navigate" }],
-      "featured": true,
+      "id": "link-concerts",
+      "title": "Concerts",
+      "links": [{ "label": "Voir les dates", "href": "/concerts", "intent": "navigate" }],
       "group": "primary",
-      "enabled": true
+      "enabled": true,
+      "order": 1
     },
     {
-      "id": "link-02",
-      "title": "Prendre contact",
-      "links": [{ "label": "Écrire", "href": "mailto:bonjour@example.com", "intent": "contact" }],
+      "id": "link-listen",
+      "title": "Écouter",
+      "links": [{ "label": "Spotify", "href": "https://spotify.com/maloya.band", "intent": "navigate" }],
       "group": "primary",
-      "enabled": true
+      "enabled": true,
+      "order": 2
+    },
+    {
+      "id": "link-youtube",
+      "title": "Regarder",
+      "links": [{ "label": "YouTube", "href": "https://youtube.com/maloya.band", "intent": "navigate" }],
+      "group": "primary",
+      "enabled": true,
+      "order": 3
+    },
+    {
+      "id": "link-booking",
+      "title": "Booking professionnel",
+      "links": [{ "label": "Nous contacter", "href": "/contact", "intent": "contact" }],
+      "group": "primary",
+      "enabled": true,
+      "order": 4
     }
   ],
+  "services": [],
+  "reviews": [],
   "projects": [],
   "events": [],
   "products": [],
