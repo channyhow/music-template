@@ -14,6 +14,47 @@
   &__header {
     margin-bottom: var(--section-gap, #{$space-3});
   }
+
+  &__mediaOverlay {
+    position: relative;
+    display: grid;
+    min-height: inherit;
+    overflow: hidden;
+  }
+
+  &__mediaOverlay > .section__media,
+  &__mediaOverlay > .section__overlayContent {
+    grid-area: 1 / 1;
+  }
+
+  &__mediaOverlay > .section__media {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+  }
+
+  &__mediaOverlay > .section__media .media__asset {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__overlayContent {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: flex-end;
+    padding: clamp(#{$space-2}, 5vw, #{$space-4});
+  }
+}
+
+.section[data-layout="media-overlay"] {
+  padding: 0;
+}
+
+.section[data-layout="media-overlay"] .section__inner {
+  width: 100%;
+  max-width: none;
 }
 
 .section[data-layout="statement"] .section__inner,
