@@ -17,6 +17,7 @@
 .section[data-layout="media-overlay"] { padding:0; }
 .section[data-layout="media-overlay"] .section__inner { display:flex; width:100%; max-width:none; }
 .section[data-layout="statement"] .section__inner,.section[data-layout="text"] .section__inner { display:grid; justify-items:start; }
+.section#home-opening .section__overlayContent { align-items:center; padding-block:clamp(#{$space-4},12vh,9rem); }
 #site-footer { min-height:auto; padding-block:clamp(#{$space-4},7vw,6rem); }
 #site-footer .section__inner,#site-footer .textBlock { width:100%; max-width:none; }
 #site-footer .textBlock { display:grid; grid-template-areas:"brand" "nav" "meta"; gap:0; }
