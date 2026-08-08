@@ -1,30 +1,10 @@
 import { useReducedMotion } from "motion/react";
-
 import { resolveBlock } from "@/data/resolve";
 import { Section } from "@/components/section/Section";
-import type { SectionGroup as SectionGroupData } from "@/types/content";
-
+import type { BlockRef, PanelAlign, PanelBehavior, PanelSize, PanelSurface, SectionGroup as SectionGroupData } from "@/types/content";
+function renderBlocks(blocks: BlockRef[]) { return blocks.map(({ ref }) => { const block = resolveBlock(ref); return block ? <Section key={ref} block={block} /> : null; }); }
+function Panel({ id, behavior, size, align, surface, blocks }: { id: string; behavior: PanelBehavior | "stack"; size: PanelSize; align: PanelAlign; surface: PanelSurface; blocks: BlockRef[]; }) { return <div className="sectionGroup__panel" data-panel-id={id} data-panel-behavior={behavior} data-panel-size={size} data-panel-align={align} data-panel-surface={surface}>{renderBlocks(blocks)}</div>; }
 export function SectionGroup({ group }: { group: SectionGroupData }) {
-  const reduceMotion = useReducedMotion();
-  const requestedLayout = group.layout ?? "flow";
-  const layout = reduceMotion && requestedLayout !== "flow" ? "flow" : requestedLayout;
-  const isPanel = layout === "scroll-panel";
-
-  return (
-    <div
-      className="sectionGroup"
-      data-layout={layout}
-      data-panel-mode={isPanel ? group.panel?.mode ?? "scene" : undefined}
-      data-panel-size={isPanel ? group.panel?.size ?? "md" : undefined}
-      data-panel-align={isPanel ? group.panel?.align ?? "center" : undefined}
-      data-panel-surface={isPanel ? group.panel?.surface ?? "solid" : undefined}
-      data-motion={reduceMotion ? "none" : group.motion?.level ?? "none"}
-      data-preset={reduceMotion ? undefined : group.motion?.preset}
-    >
-      {group.blocks.map(({ ref }) => {
-        const block = resolveBlock(ref);
-        return block ? <Section key={ref} block={block} /> : null;
-      })}
-    </div>
-  );
+  const reduceMotion = useReducedMotion(); const requestedLayout = group.layout ?? "flow"; const layout = reduceMotion && requestedLayout !== "flow" ? "flow" : requestedLayout; const isPanel = layout === "scroll-panel"; const mode = group.panel?.mode ?? "scene"; const defaultSize = group.panel?.size ?? "md"; const defaultAlign = group.panel?.align ?? "center"; const defaultSurface = group.panel?.surface ?? "solid"; const blocks = group.blocks ?? [];
+  return <div className="sectionGroup" data-layout={layout} data-panel-mode={isPanel ? mode : undefined} data-motion={reduceMotion ? "none" : group.motion?.level ?? "none"} data-preset={reduceMotion ? undefined : group.motion?.preset}>{isPanel && group.panels?.length ? group.panels.map((panel) => <Panel key={panel.id} id={panel.id} behavior={reduceMotion ? "moving" : panel.behavior ?? "moving"} size={panel.size ?? defaultSize} align={panel.align ?? defaultAlign} surface={panel.surface ?? defaultSurface} blocks={panel.blocks} />) : isPanel && mode === "stack" ? blocks.map((block, index) => <Panel key={block.ref} id={`${group.id}-${index + 1}`} behavior={reduceMotion ? "moving" : "stack"} size={defaultSize} align={defaultAlign} surface={defaultSurface} blocks={[block]} />) : isPanel && mode === "scene" && blocks.length ? <><Panel id={`${group.id}-scene`} behavior={reduceMotion ? "moving" : "fixed"} size="full" align="center" surface="transparent" blocks={[blocks[0]]} />{blocks.slice(1).map((block, index) => <Panel key={block.ref} id={`${group.id}-panel-${index + 1}`} behavior="moving" size={defaultSize} align={defaultAlign} surface={defaultSurface} blocks={[block]} />)}</> : renderBlocks(blocks)}</div>;
 }
