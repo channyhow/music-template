@@ -14,8 +14,10 @@ export function SectionGroup({ group }: { group: SectionGroupData }) {
     <div
       className="sectionGroup"
       data-layout={layout}
+      data-panel-mode={isPanel ? group.panel?.mode ?? "scene" : undefined}
       data-panel-size={isPanel ? group.panel?.size ?? "md" : undefined}
       data-panel-align={isPanel ? group.panel?.align ?? "center" : undefined}
+      data-panel-surface={isPanel ? group.panel?.surface ?? "solid" : undefined}
       data-motion={reduceMotion ? "none" : group.motion?.level ?? "none"}
       data-preset={reduceMotion ? undefined : group.motion?.preset}
     >
