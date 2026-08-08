@@ -16,7 +16,7 @@ export type SectionLayout =
   | "media-overlay";
 
 export type GroupLayout = "flow" | "scroll-panel" | "sticky" | "overlap";
-export type PanelSize = "sm" | "md" | "lg";
+export type PanelSize = "sm" | "md" | "lg" | "full";
 export type PanelAlign = "left" | "center" | "right";
 
 export type ActionIntent =
