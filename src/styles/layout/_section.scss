@@ -2,12 +2,14 @@
 @use "../foundation/mixins" as *;
 
 .section {
+  display: flex;
+  flex-direction: column;
   width: 100%;
   padding-block: var(--section-space, #{$space-4});
   padding-inline: clamp(#{$space-2}, 5vw, #{$space-4});
-  &__inner { width: min(100%, #{$container-max}); margin-inline: auto; }
+  &__inner { flex: 1 1 auto; width: min(100%, #{$container-max}); margin-inline: auto; }
   &__header { margin-bottom: var(--section-gap, #{$space-3}); }
-  &__mediaOverlay { position: relative; display: grid; min-height: inherit; overflow: hidden; }
+  &__mediaOverlay { position: relative; display: grid; flex: 1 1 auto; width: 100%; min-height: 100%; overflow: hidden; }
   &__mediaOverlay > .section__media,
   &__mediaOverlay > .section__overlayContent { grid-area: 1 / 1; }
   &__mediaOverlay > .section__media { width: 100%; height: 100%; margin: 0; }
@@ -21,7 +23,7 @@
 .section[data-surface="accent"] { background: var(--theme-accent); color: var(--theme-primary); }
 .section[data-surface="transparent"] { background: transparent; }
 .section[data-layout="media-overlay"] { padding: 0; }
-.section[data-layout="media-overlay"] .section__inner { width: 100%; max-width: none; }
+.section[data-layout="media-overlay"] .section__inner { display: flex; width: 100%; max-width: none; }
 .section[data-layout="statement"] .section__inner,
 .section[data-layout="text"] .section__inner { display: grid; justify-items: start; }
 @include desktop-up { .section[data-layout="text"] .section__inner, .section[data-layout="statement"] .section__inner { grid-template-columns: repeat(12, minmax(0, 1fr)); } .section[data-layout="text"] .textBlock, .section[data-layout="statement"] .textBlock { grid-column: 3 / span 8; } }
