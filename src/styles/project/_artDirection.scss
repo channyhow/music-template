@@ -145,6 +145,33 @@
 }
 
 @media (min-width: 64rem) {
+  .sectionGroup[data-layout="scroll-panel"] #music-featured,
+  .sectionGroup[data-layout="scroll-panel"] #concerts-featured {
+    margin-block: 9svh;
+  }
+
+  .sectionGroup[data-layout="scroll-panel"] #music-featured {
+    --section-space: clamp(1.5rem, 2.5vw, 2.5rem);
+    background: rgb(14 14 14 / 0.74);
+    color: #f6f5f3;
+    border-left: 1px solid rgb(246 245 243 / 0.24);
+    backdrop-filter: blur(8px);
+  }
+
+  .sectionGroup[data-layout="scroll-panel"] #concerts-featured {
+    --section-space: clamp(1.5rem, 2.5vw, 2.5rem);
+  }
+
+  .sectionGroup[data-layout="scroll-panel"] #music-featured .textBlock__title,
+  .sectionGroup[data-layout="scroll-panel"] #concerts-featured .textBlock__title {
+    font-size: clamp(1.8rem, 3vw, 3rem);
+  }
+
+  .sectionGroup[data-layout="scroll-panel"] #music-featured .carousel__track,
+  .sectionGroup[data-layout="scroll-panel"] #concerts-featured .carousel__track {
+    grid-auto-columns: minmax(88%, 1fr);
+  }
+
   #concerts-featured .section__header,
   #music-featured .section__header,
   #press-featured .section__header {
