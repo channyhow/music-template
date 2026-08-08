@@ -1,173 +1,22 @@
 @use "../foundation/tokens" as *;
 @use "../foundation/mixins" as *;
-
-.drawer {
-  width: 100%;
-  max-width: none;
-  height: 100%;
-  max-height: none;
-  margin: 0;
-  padding: 0;
-  border: 0;
-  background: transparent;
-  color: var(--primary);
-  opacity: 0;
-  transition:
-    opacity $transition-interface,
-    display $duration-default allow-discrete,
-    overlay $duration-default allow-discrete;
-}
-
-.drawer[open] {
-  opacity: 1;
-}
-
-.drawer::backdrop {
-  background: rgb(0 0 0 / 0.24);
-  opacity: 0;
-  transition:
-    opacity $transition-interface,
-    display $duration-default allow-discrete,
-    overlay $duration-default allow-discrete;
-}
-
-.drawer[open]::backdrop {
-  opacity: 1;
-}
-
-.drawer__dismiss {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  width: 100%;
-  height: 100%;
-  padding: 0;
-  border: 0;
-  background: transparent;
-  cursor: default;
-}
-
-.drawer__dismiss:focus-visible {
-  outline: 0;
-}
-
-.drawer__panel {
-  position: absolute;
-  inset: 0 0 0 auto;
-  z-index: 1;
-  width: min(92vw, 46rem);
-  min-height: 100%;
-  padding: $space-3;
-  overflow-y: auto;
-  overscroll-behavior: contain;
-  background: var(--drawer-surface, var(--secondary));
-  color: var(--drawer-color, var(--primary));
-  box-shadow: $shadow-soft;
-  opacity: 0;
-  transform: translate3d(100%, 0, 0);
-  transition:
-    transform $transition-reveal,
-    opacity $transition-interface;
-  backface-visibility: hidden;
-}
-
-.drawer[open] .drawer__panel {
-  opacity: 1;
-  transform: translate3d(0, 0, 0);
-}
-
-.drawer__header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: $space-2;
-  padding-bottom: $space-2;
-  border-bottom: 1px solid color-mix(in srgb, currentColor 18%, transparent);
-}
-
-.drawer__label {
-  margin: 0;
-}
-
-.drawer__body {
-  padding-top: $space-3;
-  animation: drawer-content-enter $duration-default $ease-standard both;
-}
-
-.drawer__nav,
-.drawer__content {
-  display: grid;
-  gap: $space-2;
-}
-
-.drawer__nav a,
-.drawer__content a {
-  color: inherit;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 0.2em;
-}
-
-.site[data-drawer="menu"] {
-  --drawer-surface: var(--secondary);
-  --drawer-color: var(--primary);
-}
-
-.site[data-drawer="contact"],
-.site[data-drawer="reservation"] {
-  --drawer-surface: var(--primary);
-  --drawer-color: var(--secondary);
-}
-
-@keyframes drawer-content-enter {
-  from {
-    opacity: 0;
-    transform: translate3d($space-2, 0, 0);
-  }
-
-  to {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-  }
-}
-
-@starting-style {
-  .drawer[open] {
-    opacity: 0;
-  }
-
-  .drawer[open]::backdrop {
-    opacity: 0;
-  }
-
-  .drawer[open] .drawer__panel {
-    opacity: 0;
-    transform: translate3d(100%, 0, 0);
-  }
-}
-
-@media (max-width: $bp-tablet) {
-  .drawer__panel {
-    width: 100%;
-  }
-
-  .drawer__dismiss {
-    display: none;
-  }
-}
-
-@include reduced-motion {
-  .drawer,
-  .drawer::backdrop,
-  .drawer__panel {
-    transition: none;
-  }
-
-  .drawer__panel,
-  .drawer[open] .drawer__panel {
-    transform: none;
-  }
-
-  .drawer__body {
-    animation: none;
-  }
-}
+.drawer { width: 100%; max-width: none; height: 100%; max-height: none; margin: 0; padding: 0; border: 0; background: transparent; color: var(--primary); opacity: 0; transition: opacity $transition-interface, display $duration-default allow-discrete, overlay $duration-default allow-discrete; }
+.drawer[open] { opacity: 1; }
+.drawer::backdrop { background: rgb(0 0 0 / .24); opacity: 0; transition: opacity $transition-interface, display $duration-default allow-discrete, overlay $duration-default allow-discrete; }
+.drawer[open]::backdrop { opacity: 1; }
+.drawer__dismiss { position: absolute; inset: 0; z-index: 0; width: 100%; height: 100%; padding: 0; border: 0; background: transparent; cursor: default; }
+.drawer__dismiss:focus-visible { outline: 0; }
+.drawer__panel { position: absolute; inset: 0 0 0 auto; z-index: 1; width: min(92vw, 46rem); min-height: 100%; padding: $space-3; overflow-y: auto; overscroll-behavior: contain; background: var(--drawer-surface, var(--secondary)); color: var(--drawer-color, var(--primary)); box-shadow: $shadow-soft; opacity: 0; transform: translate3d(100%,0,0); transition: transform $transition-reveal, opacity $transition-interface; backface-visibility: hidden; }
+.drawer[open] .drawer__panel { opacity: 1; transform: translate3d(0,0,0); }
+.drawer__header { display: flex; align-items: center; justify-content: space-between; gap: $space-2; padding-bottom: $space-2; border-bottom: 1px solid color-mix(in srgb, currentColor 18%, transparent); }
+.drawer__label { margin: 0; }
+.drawer__body { padding-top: $space-3; animation: drawer-content-enter $duration-default $ease-standard both; }
+.drawer__nav, .drawer__content { display: grid; gap: $space-2; }
+.drawer__nav a { width: fit-content; color: inherit; font-family: var(--font-heading, serif); font-size: $type-heading-lg; line-height: 1; text-decoration: none; transition: color $transition-hover; @include hover { color: var(--accent); } &:focus-visible { @include focus-ring; } }
+.drawer__content a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: .2em; }
+.site[data-drawer="menu"] { --drawer-surface: var(--secondary); --drawer-color: var(--primary); }
+.site[data-drawer="contact"], .site[data-drawer="reservation"] { --drawer-surface: var(--primary); --drawer-color: var(--secondary); }
+@keyframes drawer-content-enter { from { opacity: 0; transform: translate3d($space-2,0,0); } to { opacity: 1; transform: translate3d(0,0,0); } }
+@starting-style { .drawer[open] { opacity: 0; } .drawer[open]::backdrop { opacity: 0; } .drawer[open] .drawer__panel { opacity: 0; transform: translate3d(100%,0,0); } }
+@media (max-width: $bp-tablet) { .drawer__panel { width: 100%; } .drawer__dismiss { display: none; } }
+@include reduced-motion { .drawer, .drawer::backdrop, .drawer__panel { transition: none; } .drawer__panel, .drawer[open] .drawer__panel { transform: none; } .drawer__body { animation: none; } }
