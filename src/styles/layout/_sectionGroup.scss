@@ -6,13 +6,16 @@
 .sectionGroup[data-layout="scroll-panel"] { --panel-width: min(36rem, calc(100% - #{$space-3 * 2})); --panel-inline-start: auto; --panel-inline-end: auto; }
 .sectionGroup[data-layout="scroll-panel"][data-panel-size="sm"] { --panel-width: min(26rem, calc(100% - #{$space-3 * 2})); }
 .sectionGroup[data-layout="scroll-panel"][data-panel-size="lg"] { --panel-width: min(48rem, calc(100% - #{$space-3 * 2})); }
+.sectionGroup[data-layout="scroll-panel"][data-panel-size="full"] { --panel-width: 100%; --panel-inline-start: 0; --panel-inline-end: 0; }
 .sectionGroup[data-layout="scroll-panel"][data-panel-align="left"] { --panel-inline-start: $space-3; --panel-inline-end: auto; }
 .sectionGroup[data-layout="scroll-panel"][data-panel-align="right"] { --panel-inline-start: auto; --panel-inline-end: $space-3; }
+.sectionGroup[data-layout="scroll-panel"][data-panel-size="full"] { --panel-inline-start: 0; --panel-inline-end: 0; }
 
 @include desktop-up {
   .sectionGroup[data-layout="scroll-panel"] > .section:first-child,
   .sectionGroup[data-layout="sticky"] > .section:first-child { position: sticky; top: 0; }
   .sectionGroup[data-layout="scroll-panel"] > .section:not(:first-child) { width: var(--panel-width); margin-inline-start: var(--panel-inline-start); margin-inline-end: var(--panel-inline-end); position: relative; z-index: 1; }
+  .sectionGroup[data-layout="scroll-panel"][data-panel-size="full"] > .section:not(:first-child) { width: 100%; margin-inline: 0; }
   .sectionGroup[data-layout="overlap"] > .section + .section { margin-top: calc($space-4 * -1); }
 }
 
