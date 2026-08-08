@@ -1,3 +1,5 @@
+@use "sass:list";
+
 $gray-0: #ffffff;
 $gray-100: #f5f5f3;
 $gray-300: #d7d7d2;
@@ -42,10 +44,10 @@ $type-display-lg: clamp(2.75rem, 5vw, 5.25rem);
 $type-display-xl: clamp(3.75rem, 7vw, 7rem);
 $type-heading: $type-heading-xl;
 $type-display: $type-display-lg;
-$ratio-square: 1 / 1;
-$ratio-landscape: 4 / 3;
-$ratio-wide: 16 / 9;
-$ratio-portrait: 4 / 5;
+$ratio-square: list.slash(1, 1);
+$ratio-landscape: list.slash(4, 3);
+$ratio-wide: list.slash(16, 9);
+$ratio-portrait: list.slash(4, 5);
 $duration-fast: 180ms;
 $duration-default: 360ms;
 $duration-slow: 640ms;
