@@ -3,22 +3,34 @@
 
 .sectionGroup { position: relative; }
 .sectionGroup[data-layout="flow"] { display: block; }
-.sectionGroup[data-layout="scroll-panel"] { --panel-width: min(36rem, calc(100% - #{$space-3 * 2})); --panel-inline-start: auto; --panel-inline-end: auto; }
+.sectionGroup[data-layout="scroll-panel"] { --panel-width: min(36rem, calc(100% - #{$space-3 * 2})); --panel-inline-start: auto; --panel-inline-end: auto; --panel-glass-bg: color-mix(in srgb, var(--secondary) 82%, transparent); --panel-glass-blur: 1.25rem; }
 .sectionGroup[data-layout="scroll-panel"][data-panel-size="sm"] { --panel-width: min(26rem, calc(100% - #{$space-3 * 2})); }
 .sectionGroup[data-layout="scroll-panel"][data-panel-size="lg"] { --panel-width: min(48rem, calc(100% - #{$space-3 * 2})); }
 .sectionGroup[data-layout="scroll-panel"][data-panel-size="full"] { --panel-width: 100%; --panel-inline-start: 0; --panel-inline-end: 0; }
 .sectionGroup[data-layout="scroll-panel"][data-panel-align="left"] { --panel-inline-start: $space-3; --panel-inline-end: auto; }
 .sectionGroup[data-layout="scroll-panel"][data-panel-align="right"] { --panel-inline-start: auto; --panel-inline-end: $space-3; }
 .sectionGroup[data-layout="scroll-panel"][data-panel-size="full"] { --panel-inline-start: 0; --panel-inline-end: 0; }
+.sectionGroup[data-layout="scroll-panel"][data-panel-surface="transparent"] > .section { background: transparent; }
+.sectionGroup[data-layout="scroll-panel"][data-panel-surface="glass"] > .section { background-color: var(--panel-glass-bg); -webkit-backdrop-filter: blur(var(--panel-glass-blur)); backdrop-filter: blur(var(--panel-glass-blur)); }
+
+@supports (animation-timeline: view()) {
+  .sectionGroup[data-layout="scroll-panel"][data-panel-surface="glass"] > .section { animation: panel-glass-in linear both; animation-timeline: view(block); animation-range: entry 0% entry 60%; }
+}
+
+@keyframes panel-glass-in {
+  from { background-color: transparent; -webkit-backdrop-filter: blur(0); backdrop-filter: blur(0); }
+  to { background-color: var(--panel-glass-bg); -webkit-backdrop-filter: blur(var(--panel-glass-blur)); backdrop-filter: blur(var(--panel-glass-blur)); }
+}
 
 @include desktop-up {
-  .sectionGroup[data-layout="scroll-panel"] > .section:first-child,
+  .sectionGroup[data-layout="scroll-panel"][data-panel-mode="scene"] > .section:first-child,
   .sectionGroup[data-layout="sticky"] > .section:first-child { position: sticky; top: 0; }
-  .sectionGroup[data-layout="scroll-panel"] > .section:not(:first-child) { width: var(--panel-width); margin-inline-start: var(--panel-inline-start); margin-inline-end: var(--panel-inline-end); position: relative; z-index: 1; }
-  .sectionGroup[data-layout="scroll-panel"][data-panel-size="full"] > .section:not(:first-child) { width: 100%; margin-inline: 0; }
+  .sectionGroup[data-layout="scroll-panel"][data-panel-mode="scene"] > .section:not(:first-child) { width: var(--panel-width); margin-inline-start: var(--panel-inline-start); margin-inline-end: var(--panel-inline-end); position: relative; z-index: 1; }
+  .sectionGroup[data-layout="scroll-panel"][data-panel-mode="stack"] > .section { position: sticky; top: 0; width: var(--panel-width); margin-inline-start: var(--panel-inline-start); margin-inline-end: var(--panel-inline-end); z-index: 1; }
+  .sectionGroup[data-layout="scroll-panel"][data-panel-size="full"] > .section { width: 100%; margin-inline: 0; }
   .sectionGroup[data-layout="overlap"] > .section + .section { margin-top: calc($space-4 * -1); }
 }
 
 @include reduced-motion {
-  .sectionGroup > .section { position: static !important; margin-top: 0 !important; }
+  .sectionGroup > .section { position: static !important; margin-top: 0 !important; animation: none !important; }
 }
