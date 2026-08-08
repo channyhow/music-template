@@ -8,11 +8,14 @@ export function SectionGroup({ group }: { group: SectionGroupData }) {
   const reduceMotion = useReducedMotion();
   const requestedLayout = group.layout ?? "flow";
   const layout = reduceMotion && requestedLayout !== "flow" ? "flow" : requestedLayout;
+  const isPanel = layout === "scroll-panel";
 
   return (
     <div
       className="sectionGroup"
       data-layout={layout}
+      data-panel-size={isPanel ? group.panel?.size ?? "md" : undefined}
+      data-panel-align={isPanel ? group.panel?.align ?? "center" : undefined}
       data-motion={reduceMotion ? "none" : group.motion?.level ?? "none"}
       data-preset={reduceMotion ? undefined : group.motion?.preset}
     >
