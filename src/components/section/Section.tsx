@@ -16,11 +16,11 @@ import siteData from "@/data/site.json";
 import { motionConfig, revealTransition } from "@/motion/config";
 import type { SectionBlock } from "@/types/content";
 import type { FormSchema } from "@/types/forms";
-export type SectionProps = { block: SectionBlock };
+export type SectionProps = { block: SectionBlock; suppressSceneMotion?: boolean };
 const formRegistry = forms as Record<string, FormSchema>;
 function SceneInner({ children }: { children: ReactNode }) { const ref = useRef<HTMLDivElement>(null); const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] }); const y = useTransform(scrollYProgress, [0, 1], ["1.5rem", "-1.5rem"]); return <motion.div ref={ref} className="section__inner" style={{ y }}>{children}</motion.div>; }
-export function Section({ block }: SectionProps) {
-  const reduceMotion = useReducedMotion(); const layout = block.layout ?? "text"; const header = block.content?.header; const items = [...(block.content?.items ?? []), ...resolveCollection(block.source)]; const formRef = block.content?.form; const form = typeof formRef === "string" ? formRegistry[formRef] : formRef; const mediaItems = resolveMediaList(block.content?.media); const media = mediaItems[0]; const motionEnabled = siteData.ui.experience.sectionReveal && !reduceMotion; const shouldReveal = motionEnabled && block.motion !== "none"; const shouldTrackScroll = motionEnabled && block.motion === "scene";
+export function Section({ block, suppressSceneMotion = false }: SectionProps) {
+  const reduceMotion = useReducedMotion(); const layout = block.layout ?? "text"; const header = block.content?.header; const items = [...(block.content?.items ?? []), ...resolveCollection(block.source)]; const formRef = block.content?.form; const form = typeof formRef === "string" ? formRegistry[formRef] : formRef; const mediaItems = resolveMediaList(block.content?.media); const media = mediaItems[0]; const motionEnabled = siteData.ui.experience.sectionReveal && !reduceMotion; const shouldReveal = motionEnabled && block.motion !== "none"; const shouldTrackScroll = motionEnabled && block.motion === "scene" && !suppressSceneMotion;
   const cards = items.map((item, index) => <Card key={item.id ?? `${item.title ?? "item"}-${index}`} item={item} />); const cardsGrid = cards.length ? <Grid className="section__body">{cards}</Grid> : null; const secondary = media ? <Media media={media} sizes="(min-width: 64rem) 50vw, 100vw" /> : form ? <Form schema={form} /> : cardsGrid;
   let body: ReactNode;
   if (layout === "split") body = <Split primary={header ? <TextBlock content={header} /> : null} secondary={secondary} />;
