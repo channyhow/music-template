@@ -1,9 +1,11 @@
 @use "../foundation/tokens" as *;
 @use "../foundation/mixins" as *;
-.actions { display: flex; flex-wrap: wrap; align-items: center; gap: $space-2; }
-.actions__link { display: inline-flex; align-items: center; justify-content: center; gap: .5em; min-height: $control-min-height; font-family: var(--font-heading, serif); font-size: $type-body-sm; line-height: 1; text-decoration: none; border-radius: var(--radius-control, #{$radius-full}); transition: color $transition-hover, background-color $transition-hover, border-color $transition-hover, transform $transition-hover; &:focus-visible { @include focus-ring; } }
-.actions__link--primary, .actions__link--outline { padding-inline: $space-2; border: 1px solid currentColor; }
-.actions__link--primary { background: var(--primary); color: var(--secondary); border-color: var(--primary); @include hover { background: var(--accent); border-color: var(--accent); color: var(--primary); } }
-.actions__link--outline { background: transparent; color: inherit; @include hover { color: var(--accent); border-color: var(--accent); } }
-.actions__link--arrow { padding-inline: 0; color: inherit; @include hover { color: var(--accent); .actions__arrow { transform: translateX(.2em); } } }
-.actions__arrow { display: inline-block; transition: transform $transition-hover; }
+@use "../foundation/typography" as *;
+
+.actions { display:flex; flex-wrap:wrap; align-items:center; gap:$space-2; }
+.actions__link { @include type-ui; display:inline-flex; align-items:center; justify-content:center; gap:.5em; min-height:$control-min-height; text-decoration:none; border-radius:var(--radius-control,#{$radius-full}); transition:color $transition-hover,background-color $transition-hover,border-color $transition-hover,transform $transition-hover; &:focus-visible { @include focus-ring; } }
+.actions__link--primary,.actions__link--outline { padding-inline:$space-2; border:1px solid currentColor; }
+.actions__link--primary { background:var(--primary); color:var(--secondary); border-color:var(--primary); @include hover { background:var(--accent); border-color:var(--accent); color:var(--primary); } }
+.actions__link--outline { background:transparent; color:inherit; @include hover { color:var(--accent); border-color:var(--accent); } }
+.actions__link--arrow { padding-inline:0; color:inherit; @include hover { color:var(--accent); .actions__arrow { transform:translateX(.2em); } } }
+.actions__arrow { display:inline-block; transition:transform $transition-hover; }
