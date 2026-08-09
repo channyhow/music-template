@@ -1,3 +1,5 @@
+@use "../foundation/mixins" as *;
+
 /* Maloya — immersive artist world.
    Khruangbin-inspired confidence: atmosphere first, utility always recoverable. */
 
@@ -128,7 +130,7 @@
 
 #booking-default,
 #contact-default {
-  border-top: 1px solid color-mix(in srgb, currentColor 35%, transparent);
+  @include rule-top(35%);
 }
 
 #final-cta {
