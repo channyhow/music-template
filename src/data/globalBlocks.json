@@ -15,5 +15,12 @@
     { "title": "Hébergement", "text": ["Le site est hébergé via Netlify, Inc. La version de démonstration peut être déployée sur un sous-domaine Netlify ou sur un domaine associé au projet."] },
     { "title": "Propriété intellectuelle", "text": ["La conception graphique, l’architecture de l’interface et le code de cette étude de cas sont présentés comme travaux de Chow Studio. Les marques, photographies, musiques, textes ou contenus appartenant à des tiers restent la propriété de leurs ayants droit respectifs et sont utilisés uniquement dans le cadre autorisé ou démonstratif du projet."] }
   ] } },
-  "site-footer": { "id": "site-footer", "type": "Section", "layout": "list", "content": { "header": { "eyebrow": "Maloya", "text": ["Saint-Denis · La Réunion · concept fictif.", "Création du site : Channy How-Choong · Chow Studio."], "links": [{ "label": "Concerts", "href": "/concerts", "intent": "navigate" }, { "label": "Musique", "href": "/musique", "intent": "navigate" }, { "label": "Presse", "href": "/presse", "intent": "navigate" }, { "label": "Booking", "href": "/contact", "intent": "contact" }, { "label": "Mentions légales", "href": "/mentions-legales", "intent": "navigate" }] } } }
+  "site-footer": { "id": "site-footer", "type": "Section", "layout": "list", "content": { "header": {
+    "eyebrow": "Maloya",
+    "links": [{ "label": "Concerts", "href": "/concerts", "intent": "navigate" }, { "label": "Musique", "href": "/musique", "intent": "navigate" }, { "label": "Presse", "href": "/presse", "intent": "navigate" }, { "label": "Booking", "href": "/contact", "intent": "contact" }, { "label": "Mentions légales", "href": "/mentions-legales", "intent": "navigate" }],
+    "meta": [
+      { "label": "Saint-Denis · La Réunion · concept fictif." },
+      { "label": "Création du site", "value": "Channy How-Choong · Chow Studio." }
+    ]
+  } } }
 }
