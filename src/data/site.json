@@ -15,90 +15,40 @@
       "organizationType": "MusicGroup",
       "twitterCard": "summary_large_image",
       "themeColor": "#0e0e0e",
-      "areaServed": [
-        { "kind": "region", "name": "La Réunion" }
-      ],
-      "knowsAbout": ["Maloya", "Séga", "Musique réunionnaise", "Concert", "Performance live"],
+      "areaServed": [{"kind":"region","name":"La Réunion"}],
+      "knowsAbout": ["Maloya","Séga","Musique réunionnaise","Concert","Performance live"],
       "offerCatalogName": "Musique et scène",
       "services": [
-        { "name": "Concerts", "description": "Dates live et informations pratiques." },
-        { "name": "Booking professionnel", "description": "Demandes de programmation, collaboration et événement." },
-        { "name": "Presse", "description": "Dossier, visuels et prises de contact professionnelles." }
+        {"name":"Concerts","description":"Dates live et informations pratiques."},
+        {"name":"Booking professionnel","description":"Demandes de programmation, collaboration et événement."},
+        {"name":"Presse","description":"Dossier, visuels et prises de contact professionnelles."}
       ]
     },
-    "pwa": {
-      "name": "Maloya",
-      "shortName": "Maloya",
-      "description": "Musique réunionnaise, scène vivante.",
-      "display": "standalone",
-      "startUrl": "/"
-    },
-    "contact": {
-      "email": "contact@maloya-band.com",
-      "phone": "+262 000 00 00 00",
-      "address": {
-        "street": "",
-        "postalCode": "",
-        "city": "Saint-Denis",
-        "country": "La Réunion"
-      }
-    },
-    "socials": {
-      "instagram": { "label": "Instagram", "href": "https://instagram.com/maloya.band", "enabled": true },
-      "facebook": { "label": "Facebook", "href": "https://facebook.com/maloya.band", "enabled": true },
-      "youtube": { "label": "YouTube", "href": "https://youtube.com/maloya.band", "enabled": true },
-      "spotify": { "label": "Spotify", "href": "https://spotify.com/maloya.band", "enabled": true }
-    },
-    "credits": {
-      "label": "Création du site",
-      "name": "Channy How-Choong",
-      "studio": "Chow Studio",
-      "href": "https://chow-studio.com/"
-    }
+    "pwa": {"name":"Maloya","shortName":"Maloya","description":"Musique réunionnaise, scène vivante.","display":"standalone","startUrl":"/"},
+    "contact": {"email":"contact@maloya-band.com","phone":"+262 000 00 00 00","address":{"street":"","postalCode":"","city":"Saint-Denis","country":"La Réunion"}},
+    "socials": {"instagram":{"label":"Instagram","href":"https://instagram.com/maloya.band","enabled":true},"facebook":{"label":"Facebook","href":"https://facebook.com/maloya.band","enabled":true},"youtube":{"label":"YouTube","href":"https://youtube.com/maloya.band","enabled":true},"spotify":{"label":"Spotify","href":"https://spotify.com/maloya.band","enabled":true}},
+    "credits": {"label":"Création du site","name":"Channy How-Choong","studio":"Chow Studio","href":"https://chow-studio.com/"}
   },
   "ui": {
     "copy": {
-      "navigation": {
-        "mainLabel": "Navigation principale",
-        "openMenuLabel": "Ouvrir le menu",
-        "closeLabel": "Fermer",
-        "drawerLabels": { "menu": "Navigation", "contact": "Contact", "reservation": "Booking" }
-      },
-      "forms": { "selectPlaceholder": "Sélectionner", "defaultSubmitLabel": "Envoyer" },
-      "carousel": {
-        "defaultLabel": "À écouter et découvrir",
-        "navigationLabel": "Navigation du carrousel",
-        "previousLabel": "Précédent",
-        "nextLabel": "Suivant",
-        "positionSeparator": "sur"
-      },
-      "contentSwitcher": { "controlsLabel": "Choisir un contenu" },
-      "schedule": { "bookingLabel": "Billets / infos" }
+      "navigation": {"mainLabel":"Navigation principale","openMenuLabel":"Ouvrir le menu","closeLabel":"Fermer","drawerLabels":{"menu":"Navigation","contact":"Contact","reservation":"Booking"}},
+      "forms": {"selectPlaceholder":"Sélectionner","defaultSubmitLabel":"Envoyer"},
+      "carousel": {"defaultLabel":"À écouter et découvrir","navigationLabel":"Navigation du carrousel","previousLabel":"Précédent","nextLabel":"Suivant","positionSeparator":"sur"},
+      "contentSwitcher": {"controlsLabel":"Choisir un contenu"},
+      "schedule": {"bookingLabel":"Billets / infos"}
     },
-    "loader": { "messages": ["Écouter.", "Bouger.", "Retrouver la scène."] },
-    "experience": { "scrollProgress": "rail", "sectionReveal": true, "parallax": true, "footerReveal": true }
-  },
-  "theme": {
-    "variant": "editorial",
-    "tone": "inverse",
-    "colors": { "primary": "#0e0e0e", "secondary": "#f6f5f3", "accent": "#fad248" },
-    "fonts": {
-      "classicHeading": "Anton",
-      "editorialHeading": "Anton",
-      "organicHeading": "Bodoni Moda",
-      "body": "Cutive Mono"
+    "loader": {"messages":["Écouter.","Bouger.","Retrouver la scène."]},
+    "experience": {"scrollProgress":"rail","sectionReveal":true,"parallax":true,"footerReveal":true},
+    "floatingAction": {
+      "enabled": false,
+      "label": "Booking",
+      "ariaLabel": "Actions booking",
+      "items": [
+        {"label":"Booking professionnel","href":"/contact"},
+        {"label":"Voir les dates","href":"/"}
+      ]
     }
   },
-  "integrations": {
-    "hosting": "netlify",
-    "forms": "netlify",
-    "cms": false,
-    "calendar": false,
-    "newsletter": true,
-    "commerce": false,
-    "maps": false,
-    "reviews": false,
-    "weather": false,
-    "analytics": false
-  }
+  "theme": {"variant":"editorial","tone":"inverse","colors":{"primary":"#0e0e0e","secondary":"#f6f5f3","accent":"#fad248"},"fonts":{"classicHeading":"Anton","editorialHeading":"Anton","organicHeading":"Bodoni Moda","body":"Cutive Mono"}},
+  "integrations": {"hosting":"netlify","forms":"netlify","cms":false,"calendar":false,"newsletter":true,"commerce":false,"maps":false,"reviews":false,"weather":false,"analytics":false}
 }
