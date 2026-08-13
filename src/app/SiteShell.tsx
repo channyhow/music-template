@@ -1,6 +1,7 @@
 import type { CSSProperties, ReactNode } from "react";
 
 import { Drawer } from "@/components/navigation/Drawer";
+import { FloatingAction } from "@/components/navigation/FloatingAction";
 import { Header } from "@/components/navigation/Header";
 import { ScrollProgress, type ScrollProgressMode } from "@/components/navigation/ScrollProgress";
 import siteData from "@/data/site.json";
@@ -14,17 +15,10 @@ export function SiteShell({ children }: { children: ReactNode }) {
   const overlayOpen = useUIStore(selectOverlayOpen);
   const scrollProgress = siteData.ui.experience.scrollProgress as ScrollProgressMode | false;
   const { colors, fonts } = siteData.theme;
-  const headingFont =
-    siteData.theme.variant === "editorial"
-      ? fonts.editorialHeading
-      : siteData.theme.variant === "organic"
-        ? fonts.organicHeading
-        : fonts.classicHeading;
+  const headingFont = siteData.theme.variant === "editorial" ? fonts.editorialHeading : siteData.theme.variant === "organic" ? fonts.organicHeading : fonts.classicHeading;
   const tone = siteData.theme.tone as Tone;
   const foreground = tone === "inverse" ? colors.secondary : colors.primary;
-  const background =
-    tone === "inverse" ? colors.primary : tone === "accent" ? colors.accent : colors.secondary;
-
+  const background = tone === "inverse" ? colors.primary : tone === "accent" ? colors.accent : colors.secondary;
   const themeStyle: ThemeStyle = {
     "--theme-primary": colors.primary,
     "--theme-secondary": colors.secondary,
@@ -41,17 +35,11 @@ export function SiteShell({ children }: { children: ReactNode }) {
   };
 
   return (
-    <div
-      className="site"
-      data-variant={siteData.theme.variant as StyleVariant}
-      data-tone={tone}
-      data-drawer={drawer ?? "closed"}
-      data-overlay={overlayOpen ? "open" : "closed"}
-      style={themeStyle}
-    >
+    <div className="site" data-variant={siteData.theme.variant as StyleVariant} data-tone={tone} data-drawer={drawer ?? "closed"} data-overlay={overlayOpen ? "open" : "closed"} style={themeStyle}>
       <ScrollProgress mode={scrollProgress} />
       <Header />
       <main className="site__canvas">{children}</main>
+      <FloatingAction />
       <Drawer />
     </div>
   );
