@@ -3,12 +3,15 @@
 @use "../foundation/typography" as *;
 
 .section {
+  --section-bg: transparent;
+  --section-fg: inherit;
+  --section-glass-bg: color-mix(in srgb, var(--section-bg) 76%, transparent);
   display: flex;
   flex-direction: column;
   width: 100%;
   padding-block: var(--section-space, #{$space-4});
   padding-inline: clamp(#{$space-2}, 5vw, #{$space-4});
-
+  color: var(--section-fg);
   &__inner { flex: 1 1 auto; width: min(100%, #{$container-max}); margin-inline: auto; }
   &__header { margin-bottom: var(--section-gap, #{$space-3}); }
   &__mediaOverlay { position: relative; display: grid; flex: 1 1 auto; width: 100%; min-height: 100%; overflow: hidden; }
@@ -20,16 +23,17 @@
   &__mediaOverlay > .section__media .media__asset { object-fit: cover; }
   &__overlayContent { position: relative; z-index: 1; display: flex; align-items: center; padding-inline: clamp(#{$space-2}, 5vw, #{$space-4}); padding-block: clamp(#{$space-4}, 12vh, 9rem); }
 }
-
-.section[data-surface="primary"] { background: var(--theme-primary); color: var(--theme-secondary); }
-.section[data-surface="secondary"] { background: var(--theme-secondary); color: var(--theme-primary); }
-.section[data-surface="accent"] { background: var(--theme-accent); color: var(--theme-primary); }
+.section[data-color="primary"] { --section-bg: var(--theme-primary); --section-fg: var(--theme-secondary); }
+.section[data-color="secondary"] { --section-bg: var(--theme-secondary); --section-fg: var(--theme-primary); }
+.section[data-color="accent"] { --section-bg: var(--theme-accent); --section-fg: var(--theme-primary); }
+.section[data-color="special"] { --section-bg: var(--theme-special); --section-fg: var(--theme-primary); }
+.section[data-surface="solid"] { background: var(--section-bg); }
+.section[data-surface="glass"] { background: var(--section-glass-bg); backdrop-filter: blur(1.1rem); -webkit-backdrop-filter: blur(1.1rem); }
 .section[data-surface="transparent"] { background: transparent; }
 .section[data-layout="media-overlay"] { padding: 0; }
 .section[data-layout="media-overlay"] .section__inner { display: flex; width: 100%; max-width: none; }
 .section[data-layout="statement"] .section__inner,
 .section[data-layout="text"] .section__inner { display: grid; justify-items: start; }
-
 #site-footer { min-height: clamp(28rem, 55svh, 44rem); padding-block: clamp(#{$space-4}, 7vw, 6rem); }
 #site-footer .section__inner,
 #site-footer .textBlock { width: 100%; max-width: none; min-height: inherit; }
@@ -45,14 +49,12 @@
 #site-footer .actions__link[data-intent="reservation"] .actions__arrow { display: inline; }
 #site-footer .textBlock__meta { @include type-eyebrow; grid-area: meta; align-self: end; display: flex; justify-content: space-between; align-items: flex-end; gap: $space-2; width: 100%; margin: 0; padding-top: clamp(#{$space-4}, 7vw, 7rem); }
 #site-footer .textBlock__meta span:last-child { margin-left: auto; text-align: right; }
-
 @include desktop-up {
   .section[data-layout="text"] .section__inner,
   .section[data-layout="statement"] .section__inner { grid-template-columns: repeat(12, minmax(0, 1fr)); }
   .section[data-layout="text"] .textBlock,
   .section[data-layout="statement"] .textBlock { grid-column: 3 / span 8; }
 }
-
 @media (max-width: 47.999rem) {
   .section__overlayContent { padding-block: clamp(#{$space-4}, 10vh, 6rem); }
   #site-footer { min-height: auto; }
