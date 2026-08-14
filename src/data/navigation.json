@@ -1,11 +1,9 @@
 {
   "primary": [
-    { "id": "home", "label": "Accueil", "href": "/", "enabled": true },
-    { "id": "concerts", "label": "Concerts", "href": "/concerts", "enabled": true },
     { "id": "music", "label": "Musique", "href": "/musique", "enabled": true },
+    { "id": "concerts", "label": "Concerts", "href": "/concerts", "enabled": true },
     { "id": "press", "label": "Presse", "href": "/presse", "enabled": true },
-    { "id": "contact", "label": "Booking", "href": "/contact", "enabled": true },
-    { "id": "legal", "label": "Mentions légales", "href": "/mentions-legales", "enabled": true }
+    { "id": "contact", "label": "Booking", "href": "/contact", "enabled": true }
   ],
   "review": [
     { "id": "system", "label": "System", "href": "/system", "enabled": true },
