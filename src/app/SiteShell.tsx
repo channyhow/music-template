@@ -15,6 +15,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
   const overlayOpen = useUIStore(selectOverlayOpen);
   const scrollProgress = siteData.ui.experience.scrollProgress as ScrollProgressMode | false;
   const { colors, fonts } = siteData.theme;
+  const special = "special" in colors && typeof colors.special === "string" ? colors.special : colors.secondary;
   const headingFont = siteData.theme.variant === "editorial" ? fonts.editorialHeading : siteData.theme.variant === "organic" ? fonts.organicHeading : fonts.classicHeading;
   const tone = siteData.theme.tone as Tone;
   const foreground = tone === "inverse" ? colors.secondary : colors.primary;
@@ -22,6 +23,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
   const themeStyle: ThemeStyle = {
     "--theme-primary": colors.primary,
     "--theme-secondary": colors.secondary,
+    "--theme-special": special,
     "--theme-accent": colors.accent,
     "--primary": foreground,
     "--secondary": background,
@@ -36,9 +38,10 @@ export function SiteShell({ children }: { children: ReactNode }) {
 
   return (
     <div className="site" data-variant={siteData.theme.variant as StyleVariant} data-tone={tone} data-drawer={drawer ?? "closed"} data-overlay={overlayOpen ? "open" : "closed"} style={themeStyle}>
+      <a className="skipLink" href="#main-content">Aller au contenu principal</a>
       <ScrollProgress mode={scrollProgress} />
       <Header />
-      <main className="site__canvas">{children}</main>
+      <main id="main-content" className="site__canvas" tabIndex={-1}>{children}</main>
       <FloatingAction />
       <Drawer />
     </div>
